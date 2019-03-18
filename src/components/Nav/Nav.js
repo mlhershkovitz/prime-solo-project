@@ -26,15 +26,18 @@ const Nav = (props) => (
         </>
       )}
       {/* Always show this link since the about page is not protected */}
+      <Link className="nav-link" to="/">
+        Home
+      </Link>
       <Link className="nav-link" to="/search">
         Find a Friend
       </Link>
       <Link className="nav-link" to="/all-animals">
         All Animals
       </Link>
-      <Link className="nav-link" to="/login">
+      {/* <Link className="nav-link" to="/login">
         Login
-      </Link>
+      </Link> */}
     </div>
   </div>
 );

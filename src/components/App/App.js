@@ -15,6 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import SearchPage from '../SearchPage/SearchPage';
 import ResultsPage from '../ResultsPage/ResultsPage';
+import AnimalsPage from '../AnimalsPage/AnimalsPage';
 
 import UserPage from '../UserPage/UserPage';
 import RescueAdminPage from '../RescueAdminPage/RescueAdminPage';
@@ -44,6 +45,11 @@ class App extends Component {
               exact
               path="/results"
               component={ResultsPage}
+            />
+            <Route
+              exact
+              path="/all-animals"
+              component={AnimalsPage}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/home will show the UserPage if the user is logged in.

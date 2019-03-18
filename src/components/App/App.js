@@ -13,10 +13,11 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import SearchPage from '../SearchPage/SearchPage';
+import ResultsPage from '../ResultsPage/ResultsPage';
 
+import UserPage from '../UserPage/UserPage';
+import RescueAdminPage from '../RescueAdminPage/RescueAdminPage';
 import './App.css';
 
 class App extends Component {
@@ -36,8 +37,13 @@ class App extends Component {
             This is a route anyone can see, no login necessary */}
             <Route
               exact
-              path="/about"
-              component={AboutPage}
+              path="/search"
+              component={SearchPage}
+            />
+            <Route
+              exact
+              path="/results"
+              component={ResultsPage}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
@@ -52,8 +58,8 @@ class App extends Component {
             they will see the info page instead. */}
             <ProtectedRoute
               exact
-              path="/info"
-              component={InfoPage}
+              path="/rescue-admin"
+              component={RescueAdminPage}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

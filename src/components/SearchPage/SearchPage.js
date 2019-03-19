@@ -19,9 +19,33 @@ class SearchPage extends Component {
 
 render() {  
     return (
-    <div>
+        <>
+    <div className="filters">
+        <h1>Search For Your New Best Friend</h1>
+        <h3>Use these to help figure out which of these wonderful creatures you are the best home for!</h3>
+        <br />
+        <div className="gender">
+        <p>Gender</p>
+        Female: <input type="checkbox" className="gender-female"></input>
+        Male: <input type="checkbox" className="gender-male"></input>
+        </div>
+        <div className="size">
+        <p>Size</p>
+        Pocket Pet (-8 lbs): <input type="checkbox" className="size-xsmall"></input>
+        Small (8-29 lbs): <input type="checkbox" className="size-small"></input>
+        Medium (30-55 lbs): <input type="checkbox" className="size-medium"></input>
+        Large (56-89 lbs): <input type="checkbox" className="size-large"></input>
+        X-Large Lap Dogs (90+ lbs): <input type="checkbox" className="size-xlarge"></input>
+        </div>
+        <div className="shedding">
+        <p>Shedding</p>
+        Yes: <input type="checkbox" className="shedding-yes"></input>
+        No: <input type="checkbox" className="shedding-no"></input>
+        </div>
+
         <button onClick={this.handleClick}>Search</button>
     </div>
+        </>
     );
   }
 }

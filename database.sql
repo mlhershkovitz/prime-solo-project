@@ -46,3 +46,15 @@ CREATE TABLE "user" (
     -- male
 -- size dog
 -- Hair vs fur
+
+-- shedding
+-- trainability
+-- size
+-- knows basic training
+-- activity level
+-- snuggle level
+-- sex
+-- socialization? (where would you like to go with this dog?)
+-- Who are they comfortable with
+
+

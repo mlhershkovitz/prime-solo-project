@@ -10,6 +10,7 @@ class AnimalsPage extends Component {
   //will for sure need get request in here
   //display the animals on cards
 
+  
 render() {  
     return (
     <div>

@@ -5,6 +5,52 @@ CREATE TABLE "user" (
 );
 
 
+CREATE TABLE "attributes" (
+    "id" SERIAL PRIMARY KEY,
+    "female" BOOL DEFAULT 't',
+    "male" BOOL DEFAULT 't',
+    "xsmall" BOOL DEFAULT 't',
+    "small" BOOL DEFAULT 't',
+    "medium" BOOL DEFAULT 't',
+    "large" BOOL DEFAULT 't',
+    "xlarge" BOOL DEFAULT 't',
+    "shedding" BOOL DEFAULT 't',
+    "not shedding" BOOL DEFAULT 't',
+    "activity-xlow" BOOL DEFAULT 't',
+    "activity-low" BOOL DEFAULT 't',
+    "activity-medium" BOOL DEFAULT 't',
+    "activity-high" BOOL DEFAULT 't',
+    "activity-xhigh" BOOL DEFAULT 't',
+    "train-basics" BOOL DEFAULT 't',
+    "train-easy" BOOL DEFAULT 't',
+    "train-hard" BOOL DEFAULT 't',
+    "dogs" BOOL DEFAULT 't',
+    "cats" BOOL DEFAULT 't',
+    "kids" BOOL DEFAULT 't',
+    "other-animals" BOOL DEFAULT 't',
+    "single-animal" BOOL DEFAULT 't',
+    "dog-park" BOOL DEFAULT 't',
+    "crowds" BOOL DEFAULT 't',
+    "apartment" BOOL DEFAULT 't',
+    "physical-fence" BOOL DEFAULT 't',
+    "leash-walking" BOOL DEFAULT 't',
+    "dog_id" INT REFERENCES "dogs"
+);
+
+
+CREATE TABLE "dog" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR (100) NOT NULL,
+    "gender" VARCHAR (15) NOT NULL,
+    "age" VARCHAR (15) NOT NULL,
+    "size" VARCHAR (15) NOT NULL,
+    "breed" VARCHAR (100) NOT NULL,
+    "coat" VARCHAR (50) NOT NULL,
+    "house-trained" VARCHAR (15) NOT NULL,
+    "fixed" VARCHAR (15) NOT NULL,
+    "health needs" VARCHAR (15) NOT NULL,
+    "comments" VARCHAR (100) NOT NULL
+    );
 
 -- Activity level
 -- snuggle level

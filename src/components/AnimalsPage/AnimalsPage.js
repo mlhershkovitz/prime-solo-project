@@ -7,7 +7,14 @@ import { connect } from 'react-redux';
 //need to figure out the material ui cards!
 class AnimalsPage extends Component {
 
+  //component did mount to make sure the page loads correctly
+  componentDidMount() {
+    this.getAnimals();
+}
   //will for sure need get request in here
+  getPlants() {
+    this.props.dispatch({ type: 'GET_ANIMAL' })
+}
   //display the animals on cards
 
   

@@ -50,7 +50,18 @@ CREATE TABLE "dog" (
     "fixed" VARCHAR (15) NOT NULL,
     "health needs" VARCHAR (15) NOT NULL,
     "comments" VARCHAR (100) NOT NULL
-    );
+);
+
+INSERT INTO "dog" ("name", "gender", "age", "size", "breed", "coat", "house-trained", "fixed", "health needs", "comments")
+VALUES ('Skye', 'Male', '2 years', '70 lbs', 'Shepherd, Husky, Terrior Mix', 'White, medium length, thick fur', 'House-trained', 'Neutered', 'Has all shots', 'Very intelligent goober, sweet snuggle bug'),
+('Moo', 'Male', '9 years', '65 lbs', 'Shepard, lab mix', 'Black, Medium length, Shepherd-like fur', 'House-trained', 'Neutered', 'Has all shots', 'Was very shy, still can be. Otherwise sweet and snuggly'),
+('Luna', 'Female', '13 years', '13 lbs', 'West Highland Terrior Runt', 'White curly hair, needs trims', 'House-trained', 'Spayed', 'Diabetic, calm', 'A lot of personality in a small body, sweet and sassy girl');
+
+
+INSERT INTO "attributes" ("female", "male", "xsmall", "small", "medium", "large", "xlarge", "shedding", "not shedding", "activity-xlow", "activity-low", "activity-medium", "activity-high", "activity-xhigh", "train-basics", "train-easy", "train-hard", "dogs", "cats", "kids", "other-animals", "single-animal", "dog-park", "crowds", "apartment", "physical-fence", "leash-walking", "dog_id")
+VALUES ('f', 't', 'f', 'f', 'f', 't', 'f', 't', 'f', 'f', 'f', 'f', 'f', 't', 't', 't', 'f', 't', 't', 't', 't', 'f', 't', 'f', 'f', 'f', 't', 1),
+('f', 't', 'f', 'f', 'f', 't', 'f', 't', 'f', 'f', 'f', 'f', 't', 'f', 't', 't', 'f', 't', 't', 'f', 't', 'f', 't', 'f', 'f', 'f', 't', 2),
+('t', 'f', 'f', 't', 'f', 'f', 'f', 't', 'f', 'f', 't', 'f', 'f', 'f', 't', 'f', 't', 't', 'f', 't', 't', 'f', 'f', 't', 't', 'f', 't', 3);
 
 -- Activity level
 -- snuggle level

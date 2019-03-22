@@ -9,54 +9,131 @@ import { connect } from 'react-redux';
 class SearchPage extends Component {
 
     state = {
-        female: true,
-        male: true,
-        xsmall: true,
-        small: true,
-        medium: true,
-        large: true,
-        xlarge: true,
-        shedding: true,
-        notshedding: true,
-        activity_low: true,
-        activity_medium: true,
-        activity_high: true,
-        activity_xhigh: true, 
-        train_basic: true,
-        train_easy: true,
-        train_hard: true,
-        dogs: true,
-        cats: true,
-        kids: true,
-        other_animals: true,
-        single_animal: true,
-        dog_park: true,
-        crowds: true,
-        apartment: true,
-        fence: true,
-        leash: true,
+        female: false,
+        male: false,
+        xsmall: false,
+        small: false,
+        medium: false,
+        large: false,
+        xlarge: false,
+        shedding: false,
+        notshedding: false,
+        activity_low: false,
+        activity_medium: false,
+        activity_high: false,
+        activity_xhigh: false, 
+        train_basic: false,
+        train_easy: false,
+        train_hard: false,
+        dogs: false,
+        cats: false,
+        kids: false,
+        other_animals: false,
+        single_animal: false,
+        dog_park: false,
+        crowds: false,
+        apartment: false,
+        fence: false,
+        leash: false,
         
     }
-componentDidMount (){
-    
-}; //end component did mount
 
 //this will need to redirect to search results page with animal cards
   handleClick = () => {
     console.log('button clicked');
-    this.props.dispatch({ type: 'GET_ANIMAL', payload: });
+    this.props.dispatch({ type: 'GET_ANIMAL', payload: this.state});
     // this.props.dispatch()
   }
 
-  handleChangeFor = () =>{
-
-  }
+  handleChangeFor = selector => () =>{
+    if(selector === 'female'){
+        this.setState({
+            ...this.state,
+            female: true,
+        })
+    }
+    if(selector === 'male'){
+        this.setState({
+            ...this.state,
+            male: true,
+        })
+    }
+        if(selector === 'xsmall'){
+            this.setState({
+                ...this.state,
+                xsmall: true,
+            })
+        }
+        if(selector === 'small'){
+            this.setState({
+                ...this.state,
+                small: true,
+            })
+        }
+        if(selector === 'medium'){
+            this.setState({
+                ...this.state,
+                medium: true,
+            })
+        }
+        if(selector === 'large'){
+            this.setState({
+                ...this.state,
+                large: true,
+            })
+        }
+        if(selector === 'xlarge'){
+            this.setState({
+                ...this.state,
+                xlarge: true,
+            })
+        }
+        if(selector === 'shedding'){
+            this.setState({
+                ...this.state,
+                shedding: true,
+            })
+        }
+        if(selector === 'notshedding'){
+            this.setState({
+                ...this.state,
+                notshedding: true,
+            })
+        }
+        if(selector === 'activity_low'){
+            this.setState({
+                ...this.state,
+                activity_low: true,
+            })
+        }
+        if(selector === 'activity_medium'){
+            this.setState({
+                ...this.state,
+                activity_medium: true,
+            })
+        }
+        if(selector === 'activity_high'){
+            this.setState({
+                ...this.state,
+                activity_high: true,
+            })
+        }
+        if(selector === 'activity_xhigh'){
+            this.setState({
+                ...this.state,
+                activity_xhigh: true,
+            })
+        }
+    }
+    
+  
   //need to figure out how to insert check boxes
   //make a list of what check boxes to make
   //figure out how to connect the check boxes to the db to filter through the animals
 
 render() {  
-    console.log("loogogog", this.props.animalls);
+    console.log("log", this.props.animalls);
+    console.log(this.state);
     
     return (
         <>
@@ -66,29 +143,29 @@ render() {
         <br />
         <div className="gender">
             <p>Gender</p>
-            Female: <input onChange={this.handleChangeFor('female')} type="checkbox" className="gender-female"></input>
-            Male: <input type="checkbox" className="gender-male"></input>
+            Female: <input onClick={this.handleChangeFor('female')} type="checkbox" className="gender-female"></input>
+            Male: <input onClick={this.handleChangeFor('male')} type="checkbox" className="gender-male"></input>
         </div>
         <div className="size">
             <p>Size</p>
-            Pocket Pet (-8 lbs): <input type="checkbox" className="size-xsmall"></input>
-            Small (8-29 lbs): <input type="checkbox" className="size-small"></input>
-            Medium (30-55 lbs): <input type="checkbox" className="size-medium"></input>
-            Large (56-89 lbs): <input type="checkbox" className="size-large"></input>
-            X-Large Lap Dogs (90+ lbs): <input type="checkbox" className="size-xlarge"></input>
+            Pocket Pet (-8 lbs): <input type="checkbox" onClick={this.handleChangeFor('xsmall')}className="size-xsmall"></input>
+            Small (8-29 lbs): <input type="checkbox" onClick={this.handleChangeFor('small')}className="size-small"></input>
+            Medium (30-55 lbs): <input type="checkbox" onClick={this.handleChangeFor('medium')}className="size-medium"></input>
+            Large (56-89 lbs): <input type="checkbox" onClick={this.handleChangeFor('large')}className="size-large"></input>
+            X-Large Lap Dogs (90+ lbs): <input type="checkbox" onClick={this.handleChangeFor('xlarge')}className="size-xlarge"></input>
         </div>
         <div className="shedding">
             <p>Shedding</p>
-            Yes: <input type="checkbox" className="shedding-yes"></input>
-            No: <input type="checkbox" className="shedding-no"></input>
+            Yes: <input type="checkbox" onClick={this.handleChangeFor('shedding')}className="shedding-yes"></input>
+            No: <input type="checkbox" onClick={this.handleChangeFor('notshedding')}className="shedding-no"></input>
         </div>
         <div className="activity">
             <p>Activity Level</p>
-            Couch Potato: <input type="checkbox" className="activity-xlow"></input>
+            Couch Potato: <input type="checkbox" onClick={this.handleChangeFor('activity_low')} className="activity-xlow"></input>
             Low activity: <input type="checkbox" className="activity-low"></input>
-            Medium activity: <input type="checkbox" className="activity-medium"></input>
-            High activity: <input type="checkbox" className="activity-high"></input>
-            Athlete: <input type="checkbox" className="activity-xhigh"></input>
+            Medium activity: <input type="checkbox" onClick={this.handleChangeFor('activity_medium')} className="activity-medium"></input>
+            High activity: <input type="checkbox" onClick={this.handleChangeFor('activity_high')} className="activity-high"></input>
+            Athlete: <input type="checkbox" onClick={this.handleChangeFor('activity_xhigh')} className="activity-xhigh"></input>
         </div>
         <div className="training">
             <p>Trainability</p>

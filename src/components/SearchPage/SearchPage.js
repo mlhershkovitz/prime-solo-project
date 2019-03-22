@@ -8,16 +8,56 @@ import { connect } from 'react-redux';
 
 class SearchPage extends Component {
 
+    state = {
+        female: true,
+        male: true,
+        xsmall: true,
+        small: true,
+        medium: true,
+        large: true,
+        xlarge: true,
+        shedding: true,
+        notshedding: true,
+        activity_low: true,
+        activity_medium: true,
+        activity_high: true,
+        activity_xhigh: true, 
+        train_basic: true,
+        train_easy: true,
+        train_hard: true,
+        dogs: true,
+        cats: true,
+        kids: true,
+        other_animals: true,
+        single_animal: true,
+        dog_park: true,
+        crowds: true,
+        apartment: true,
+        fence: true,
+        leash: true,
+        
+    }
+componentDidMount (){
+    
+}; //end component did mount
+
 //this will need to redirect to search results page with animal cards
   handleClick = () => {
     console.log('button clicked');
+    this.props.dispatch({ type: 'GET_ANIMAL', payload: });
+    // this.props.dispatch()
   }
 
+  handleChangeFor = () =>{
+
+  }
   //need to figure out how to insert check boxes
   //make a list of what check boxes to make
   //figure out how to connect the check boxes to the db to filter through the animals
 
 render() {  
+    console.log("loogogog", this.props.animalls);
+    
     return (
         <>
     <div className="filters">
@@ -26,7 +66,7 @@ render() {
         <br />
         <div className="gender">
             <p>Gender</p>
-            Female: <input type="checkbox" className="gender-female"></input>
+            Female: <input onChange={this.handleChangeFor('female')} type="checkbox" className="gender-female"></input>
             Male: <input type="checkbox" className="gender-male"></input>
         </div>
         <div className="size">
@@ -77,6 +117,10 @@ render() {
         </div>
         
         <button onClick={this.handleClick}>Search</button>
+
+        {this.props.animalls.map((animal)=>
+            <ul><li>{animal.name}</li></ul>
+        )}
     </div>
         </>
     );

@@ -46,13 +46,13 @@ CREATE TABLE "dog" (
     "size" VARCHAR (15) NOT NULL,
     "breed" VARCHAR (100) NOT NULL,
     "coat" VARCHAR (50) NOT NULL,
-    "house-trained" VARCHAR (15) NOT NULL,
+    "house_trained" VARCHAR (15) NOT NULL,
     "fixed" VARCHAR (15) NOT NULL,
-    "health needs" VARCHAR (15) NOT NULL,
+    "health_needs" VARCHAR (15) NOT NULL,
     "comments" VARCHAR (100) NOT NULL
 );
 
-INSERT INTO "dog" ("name", "gender", "age", "size", "breed", "coat", "house-trained", "fixed", "health needs", "comments")
+INSERT INTO "dog" ("name", "gender", "age", "size", "breed", "coat", "house_trained", "fixed", "health_needs", "comments")
 VALUES ('Skye', 'Male', '2 years', '70 lbs', 'Shepherd, Husky, Terrior Mix', 'White, medium length, thick fur', 'House-trained', 'Neutered', 'Has all shots', 'Very intelligent goober, sweet snuggle bug'),
 ('Moo', 'Male', '9 years', '65 lbs', 'Shepard, lab mix', 'Black, Medium length, Shepherd-like fur', 'House-trained', 'Neutered', 'Has all shots', 'Was very shy, still can be. Otherwise sweet and snuggly'),
 ('Luna', 'Female', '13 years', '13 lbs', 'West Highland Terrior Runt', 'White curly hair, needs trims', 'House-trained', 'Spayed', 'Diabetic, calm', 'A lot of personality in a small body, sweet and sassy girl');

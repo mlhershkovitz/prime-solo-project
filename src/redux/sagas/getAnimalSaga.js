@@ -12,8 +12,23 @@ function* fetchAnimal() {
   }
 }
 
-function* getAnimalSaga() {
+function* getAnimal(){
+  console.log('getanimal route hit');
+  try {
+    const response = yield axios.get('/api/animal/dog');
+    yield put ({ type: 'ANIMALLL', payload: response.data})
+  }
+    catch(error) {
+      console.log('errors of life:', error);
+      
+    }
+  }
+  
+
+
+function* projectSaga() {
   yield takeLatest('FETCH_ANIMAL', fetchAnimal);
+  yield takeLatest('GET_ANIMAL', getAnimal)
 }
 
-export default getAnimalSaga;
+export default projectSaga;

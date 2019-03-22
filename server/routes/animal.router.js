@@ -6,7 +6,8 @@ const router = express.Router();
  * GET route template
  */
 router.get('/', (req, res) => {
-    const queryString = `SELECT "id", "name", "gender", "age", "size", "breed", "coat", "house-trained", "fixed", "health needs", "comments" FROM dog`;
+    console.log('in GET')
+    const queryString = `SELECT * FROM dog`;
     pool.query(queryString)
     .then((result) => { res.send(result.rows); 
     }).catch((err) => {
@@ -14,7 +15,18 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 });
-
+router.get('/dog', (req,res)=>{
+    const queryString=(`SELECT "dog"."name" FROM "attributes" 
+    JOIN "dog" ON "dog"."id" = "attributes"."dog_id"
+    WHERE $1 = TRUE`)
+    const queryValues = [
+        dog = req.body
+    ]
+    pool.query(queryString, queryValues)
+    .then((result) => { res.send(result.rows)
+    console.log(result)})
+    
+})
 /**
  * POST route template
  */

@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import { FormHelperText } from '@material-ui/core';
 
 //if need help figuring out the specific of this,
 //look at any of the main components of the feedback app
+
+const styles = theme => ({
+  card: {
+    maxWidth: 400,
+    margin: 20
+  }
+});
 
 //need to figure out the material ui cards!
 class AnimalsPage extends Component {
@@ -23,13 +37,20 @@ class AnimalsPage extends Component {
 
   
 render() { 
-  console.log('TJ',this.props.animalList);
-   console.log('loveeeelkja:', );
+  console.log(this.props.animalList);
+  const { classes } = this.props;
    
     return (
-    <div>
-        <h1>All Animals</h1>
+      <div>
+      <h1>All Animals</h1>
+    <div style={{
+      display: 'flex',
+
+    }}>
+        
+        
         {this.props.animalList.map((animal) => (
+          <Card className={classes.card}>
           <div>
           <h6>{animal.name}</h6>
           <ul>
@@ -44,7 +65,9 @@ render() {
             <li>{animal.comments}</li>
           </ul>
           </div>
+          </Card>
         ))}
+    </div>
     </div>
     );
   }
@@ -54,4 +77,4 @@ const mapReduxStateToProps = (reduxState) => {
   return reduxState;
 };
 
-export default connect(mapReduxStateToProps)(AnimalsPage);
+export default connect(mapReduxStateToProps)(withStyles(styles)(AnimalsPage));

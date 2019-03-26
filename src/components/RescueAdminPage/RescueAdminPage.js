@@ -10,10 +10,12 @@ import { TableBody, TableRow, TableCell } from '@material-ui/core';
 //need to figure out the material ui cards!
 class RescueAdminPage extends Component {
   componentDidMount() {
-    // this.getAnimals();
-    this.props.dispatch({ type: 'FETCH_ANIMAL' });
-    
+    this.getAnimals();
   };// end component did mount
+
+  getAnimals() {
+    this.props.dispatch({ type: 'FETCH_ANIMAL' });
+  };//end get dispatch to saga
   
     //add animal form
     //this needs to include either the same check boxes as the search page

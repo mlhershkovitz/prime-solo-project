@@ -29,9 +29,9 @@ class AnimalsPage extends Component {
   };// end component did mount
 
   //will for sure need get request in here
-  // getAnimals() {
-  //   this.props.dispatch({ type: 'FETCH_ANIMAL' });
-  // };//end get dispatch to saga
+  getAnimals() {
+    this.props.dispatch({ type: 'FETCH_ANIMAL' });
+  };//end get dispatch to saga
   
   //display the animals on cards
 

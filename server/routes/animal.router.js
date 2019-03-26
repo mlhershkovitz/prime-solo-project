@@ -20,7 +20,6 @@ router.get('/dog', (req,res)=>{
     JOIN "dog" ON "dog"."id" = "attributes"."dog_id"
     WHERE $1 = TRUE`)
     const queryValues = [
-        dog = req.body
     ]
     pool.query(queryString, queryValues)
     .then((result) => { res.send(result.rows)

@@ -24,11 +24,20 @@ function* getAnimal(){
     }
   }
   
-
+  function* deleteMe(action){
+    try{
+        yield axios.delete( `api/animal/${action.payload}`)
+        
+        yield put({type: 'GET_ANIMAL'})
+    } catch(error){
+        console.log('DELETE ', error)
+    }
+  }
 
 function* projectSaga() {
   yield takeLatest('FETCH_ANIMAL', fetchAnimal);
   yield takeLatest('GET_ANIMAL', getAnimal)
+  yield takeLatest('DELETE_ME', deleteMe);
 }
 
 export default projectSaga;

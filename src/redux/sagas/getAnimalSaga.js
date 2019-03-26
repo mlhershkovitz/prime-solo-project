@@ -13,7 +13,7 @@ function* fetchAnimal() {
 }
 
 function* getAnimal(){
-  console.log('getanimal route hit');
+  console.log('GET animal route hit');
   try {
     const response = yield axios.get('/api/animal/dog');
     yield put ({ type: 'ANIMALLL', payload: response.data})

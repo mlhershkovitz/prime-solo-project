@@ -9,7 +9,12 @@ import { TableBody, TableRow, TableCell } from '@material-ui/core';
 
 //need to figure out the material ui cards!
 class RescueAdminPage extends Component {
-
+  componentDidMount() {
+    // this.getAnimals();
+    this.props.dispatch({ type: 'FETCH_ANIMAL' });
+    
+  };// end component did mount
+  
     //add animal form
     //this needs to include either the same check boxes as the search page
     //or radio buttons along with and input space for the written bio
@@ -21,10 +26,12 @@ class RescueAdminPage extends Component {
     console.log(event.target.value)
     this.props.dispatch({type: 'DELETE_ME', payload: event.target.value})
   }
-  handleAdopt=(value)=>(event)=>{
-    console.log(event.target.value)
-    this.props.dispatch({type: 'ADOPT_ME', payload: event.target.value})
-  }
+  //if there's time to implement this
+
+  // handleAdopt=(value)=>(event)=>{
+  //   console.log(event.target.value)
+  //   this.props.dispatch({type: 'ADOPT_ME', payload: event.target.value})
+  // }
 
 render() {  
     return (
@@ -34,7 +41,7 @@ render() {
     </div>
     <div className="rescueTable">
       <Table>
-        <TableHead className='table'>
+        <TableHead className="table">
           <th>Name</th>
           <th>Gender</th>
           <th>Age</th>
@@ -64,8 +71,8 @@ render() {
 
             <TableCell><button value={animal.id} 
             onClick={this.handleDelete(this.value)}>Delete</button></TableCell>
-            <TableCell><button value={animal.id} 
-            onClick={this.handleAdopt(this.value)}>Adopted</button></TableCell>
+            {/* <TableCell><button value={animal.id} 
+            onClick={this.handleAdopt(this.value)}>Adopted</button></TableCell> */}
           </TableRow>
         </TableBody>
         ))}

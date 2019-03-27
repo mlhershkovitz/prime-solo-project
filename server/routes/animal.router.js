@@ -15,37 +15,44 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 });
-router.get('/dog', (req,res)=>{ //josh was trying something
+router.get('/dog', (req,res)=>{
     const queryString = `
                             SELECT "dog"."name" FROM "attributes" 
                             JOIN "dog" ON "dog"."id" = "attributes"."dog_id"
 
-                            WHERE $1 = TRUE || 
-                            WHERE $2 = TRUE || 
-                            WHERE $3 = TRUE || 
-                            WHERE $4 = TRUE || 
-                            WHERE $5 = TRUE || 
-                            WHERE $6 = TRUE || 
-                            WHERE $7 = TRUE || 
-                            WHERE $8 = TRUE || 
-                            WHERE $9 = TRUE || 
-                            WHERE $10 = TRUE || 
-                            WHERE $11 = TRUE || 
-                            WHERE $12 = TRUE || 
-                            WHERE $13 = TRUE || 
-                            WHERE $14 = TRUE || 
-                            WHERE $15 = TRUE || 
-                            WHERE $16 = TRUE || 
-                            WHERE $17 = TRUE || 
-                            WHERE $18 = TRUE || 
-                            WHERE $19 = TRUE || 
-                            WHERE $20 = TRUE || 
-                            WHERE $21 = TRUE || 
-                            WHERE $22 = TRUE || 
-                            WHERE $23 = TRUE || 
-                            WHERE $24 = TRUE || 
-                            WHERE $25 = TRUE || 
-                            WHERE $26 = TRUE `;
+                            WHERE "female" = $1 OR 
+                            "male" = $2 AND
+
+                            "xsmall" = $3 OR
+                            "small" = $4 OR
+                            "medium" = $5 OR
+                            "large" = $6 OR
+                            "xlarge" = $7 AND
+
+                            "shedding" = $8 OR
+                            "not shedding" = $9 AND
+
+                            "activity-xlow" = $10 OR 
+                            "activity-low" = $11 OR 
+                            "activity-medium" = $12 OR 
+                            "activity-high" = $13 OR 
+                            "activity-xhigh" = $14 AND
+
+                            "train-basics" = $15 AND
+
+                            "train-easy" = $16 OR 
+                            "train-hard" = $17 AND
+
+                            "dogs" = $18 AND
+                            "cats" = $19 AND
+                            "kids" = $20 AND
+                            "other-animals" = $21 AND
+                            "single-animal" = $22 AND
+                            "dog-park" = $23 AND
+                            "crowds" = $24 AND
+                            "apartment" = $25 AND
+                            "physical-fence" = $26 AND
+                            "leash-walking" = $27;`;
     const queryValues = req.body;
 
     pool.query(queryString, queryValues)

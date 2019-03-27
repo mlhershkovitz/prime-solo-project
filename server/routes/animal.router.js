@@ -18,35 +18,7 @@ router.get('/', (req, res) => {
 router.get('/dog', (req,res)=>{ //josh was trying something
     const queryString = `
                             SELECT "dog"."name" FROM "attributes" 
-                            JOIN "dog" ON "dog"."id" = "attributes"."dog_id"
-
-                            WHERE $2 = TRUE || 
-                            WHERE $1 = TRUE || 
-                            WHERE $3 = TRUE || 
-                            WHERE $4 = TRUE || 
-                            WHERE $5 = TRUE || 
-                            WHERE $6 = TRUE || 
-                            WHERE $7 = TRUE || 
-                            WHERE $8 = TRUE || 
-                            WHERE $9 = TRUE || 
-                            WHERE $10 = TRUE || 
-                            WHERE $11 = TRUE || 
-                            WHERE $12 = TRUE || 
-                            WHERE $13 = TRUE || 
-                            WHERE $14 = TRUE || 
-                            WHERE $15 = TRUE || 
-                            WHERE $16 = TRUE || 
-                            WHERE $17 = TRUE || 
-                            WHERE $18 = TRUE || 
-                            WHERE $19 = TRUE || 
-                            WHERE $20 = TRUE || 
-                            WHERE $21 = TRUE || 
-                            WHERE $22 = TRUE || 
-                            WHERE $23 = TRUE || 
-                            WHERE $24 = TRUE || 
-                            WHERE $25 = TRUE || 
-                            WHERE $26 = TRUE || 
-                            `;
+                            JOIN "dog" ON "dog"."id" = "attributes"."dog_id"`;
 
     const queryValues = req.body;
 
@@ -76,3 +48,30 @@ router.delete('/:id', (req, res) => {
         res.sendStatus(500);
       });
   });
+
+//   WHERE $2 = TRUE || 
+//                             WHERE $1 = TRUE || 
+//                             WHERE $3 = TRUE || 
+//                             WHERE $4 = TRUE || 
+//                             WHERE $5 = TRUE || 
+//                             WHERE $6 = TRUE || 
+//                             WHERE $7 = TRUE || 
+//                             WHERE $8 = TRUE || 
+//                             WHERE $9 = TRUE || 
+//                             WHERE $10 = TRUE || 
+//                             WHERE $11 = TRUE || 
+//                             WHERE $12 = TRUE || 
+//                             WHERE $13 = TRUE || 
+//                             WHERE $14 = TRUE || 
+//                             WHERE $15 = TRUE || 
+//                             WHERE $16 = TRUE || 
+//                             WHERE $17 = TRUE || 
+//                             WHERE $18 = TRUE || 
+//                             WHERE $19 = TRUE || 
+//                             WHERE $20 = TRUE || 
+//                             WHERE $21 = TRUE || 
+//                             WHERE $22 = TRUE || 
+//                             WHERE $23 = TRUE || 
+//                             WHERE $24 = TRUE || 
+//                             WHERE $25 = TRUE || 
+//                             WHERE $26 = TRUE || 

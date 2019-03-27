@@ -9,42 +9,63 @@ import { connect } from 'react-redux';
 class SearchPage extends Component {
 
     state = {
-        female: false,
-        male: false,
-        xsmall: false,
-        small: false,
-        medium: false,
-        large: false,
-        xlarge: false,
-        shedding: false,
-        notshedding: false,
-        activity_xlow: false,
-        activity_low: false,
-        activity_medium: false,
-        activity_high: false,
-        activity_xhigh: false, 
-        train_basic: false,
-        train_easy: false,
-        train_hard: false,
-        dogs: false,
-        cats: false,
-        kids: false,
-        other_animals: false,
-        single_animal: false,
-        dog_park: false,
-        crowds: false,
-        apartment: false,
-        fence: false,
-        leash: false,
-        
+        gender: {
+            female: false,
+            male: false,
+        },
+        size: {
+            xsmall: false,
+            small: false,
+            medium: false,
+            large: false,
+            xlarge: false,
+        },
+        shedding: {
+            shedding: false,
+            notshedding: false,
+        },
+        activity: {
+            activity_xlow: false,
+            activity_low: false,
+            activity_medium: false,
+            activity_high: false,
+            activity_xhigh: false,
+        },
+        training: {
+            train_basic: false,
+            train_easy: false,
+            train_hard: false,
+        },
+        other_creatures: {
+            dogs: false,
+            cats: false,
+            kids: false,
+            other_animals: false,
+            single_animal: false,
+        },
+        places: {
+            dog_park: false,
+            crowds: false,
+            apartment: false,
+            fence: false,
+            leash: false,
+        }
     }
 
 //this will need to redirect to search results page with animal cards
-  handleClick = () => {
-    console.log('button clicked');
-    this.props.dispatch({ type: 'GET_ANIMAL', payload: this.state});
-    // this.props.dispatch()
-  }
+//   handleClick = () => {
+//     console.log('button clicked');
+//     this.props.dispatch({ type: 'GET_ANIMAL', payload: this.state});
+//     // this.props.dispatch()
+//   }
+
+
+//this.state({
+    // this.setState({
+    //     ...this.state,
+    //     female : !this.state.female
+    // })
+// })
 
   handleChangeFor = selector => () =>{
     if(selector === 'female'){
@@ -218,7 +239,7 @@ class SearchPage extends Component {
 
 render() {  
     console.log("log", this.props.animalls);
-    console.log(this.state);
+    // console.log('tj',this.props.animalList);
     
     return (
         <>
@@ -280,7 +301,7 @@ render() {
         
         <button onClick={this.handleClick}>Search</button>
 
-        {this.props.animalls.map((animal)=>
+        {this.props.animalList.map((animal)=>
             <ul><li>{animal.name}</li></ul>
         )}
     </div>

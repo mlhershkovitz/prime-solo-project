@@ -9,47 +9,33 @@ import { connect } from 'react-redux';
 class SearchPage extends Component {
 
     state = {
-        gender: {
             female: false,
             male: false,
-        },
-        size: {
             xsmall: false,
             small: false,
             medium: false,
             large: false,
             xlarge: false,
-        },
-        shedding: {
             shedding: false,
             notshedding: false,
-        },
-        activity: {
             activity_xlow: false,
             activity_low: false,
             activity_medium: false,
             activity_high: false,
             activity_xhigh: false,
-        },
-        training: {
             train_basic: false,
             train_easy: false,
             train_hard: false,
-        },
-        other_creatures: {
             dogs: false,
             cats: false,
             kids: false,
             other_animals: false,
             single_animal: false,
-        },
-        places: {
             dog_park: false,
             crowds: false,
             apartment: false,
             fence: false,
             leash: false,
-        }
     }
 
 //this will need to redirect to search results page with animal cards
@@ -230,6 +216,7 @@ class SearchPage extends Component {
                 leash: !this.state.leash,
             })
         }
+
     }
     
   
@@ -240,6 +227,8 @@ class SearchPage extends Component {
 render() {  
     console.log("log", this.props.animalls);
     // console.log('tj',this.props.animalList);
+    console.log(this.state);
+    
     
     return (
         <>

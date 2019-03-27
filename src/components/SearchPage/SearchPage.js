@@ -71,163 +71,163 @@ class SearchPage extends Component {
     if(selector === 'female'){
         this.setState({
             ...this.state,
-            female: true,
+            female: !this.state.female,
         })
     }
     if(selector === 'male'){
         this.setState({
             ...this.state,
-            male: true,
+            male: !this.state.male,
         })
     }
         if(selector === 'xsmall'){
             this.setState({
                 ...this.state,
-                xsmall: true,
+                xsmall: !this.state.xsmall,
             })
         }
         if(selector === 'small'){
             this.setState({
                 ...this.state,
-                small: true,
+                small: !this.state.small,
             })
         }
         if(selector === 'medium'){
             this.setState({
                 ...this.state,
-                medium: true,
+                medium: !this.state.medium,
             })
         }
         if(selector === 'large'){
             this.setState({
                 ...this.state,
-                large: true,
+                large: !this.state.large,
             })
         }
         if(selector === 'xlarge'){
             this.setState({
                 ...this.state,
-                xlarge: true,
+                xlarge: !this.state.xlarge,
             })
         }
         if(selector === 'shedding'){
             this.setState({
                 ...this.state,
-                shedding: true,
+                shedding: !this.state.shedding,
             })
         }
         if(selector === 'notshedding'){
             this.setState({
                 ...this.state,
-                notshedding: true,
+                notshedding: !this.state.notshedding,
             })
         }
         if(selector === 'activity_xlow'){
             this.setState({
                 ...this.state,
-                activity_low: true,
+                activity_xlow: !this.state.activity_xlow,
             })
         }
         if(selector === 'activity_low'){
             this.setState({
                 ...this.state,
-                activity_low: true,
+                activity_low: !this.state.activity_low,
             })
         }
         if(selector === 'activity_medium'){
             this.setState({
                 ...this.state,
-                activity_medium: true,
+                activity_medium: !this.state.activity_medium,
             })
         }
         if(selector === 'activity_high'){
             this.setState({
                 ...this.state,
-                activity_high: true,
+                activity_high: !this.state.activity_high,
             })
         }
         if(selector === 'activity_xhigh'){
             this.setState({
                 ...this.state,
-                activity_xhigh: true,
+                activity_xhigh: !this.state.activity_xhigh,
             })
         }
         if(selector === 'train_basic'){
             this.setState({
                 ...this.state,
-                train_basic: true,
+                train_basic: !this.state.train_basic,
             })
         }
         if(selector === 'train_easy'){
             this.setState({
                 ...this.state,
-                train_easy: true,
+                train_easy: !this.state.train_easy,
             })
         }
         if(selector === 'train_hard'){
             this.setState({
                 ...this.state,
-                train_hard: true,
+                train_hard: !this.state.train_hard,
             })
         }
         if(selector === 'dogs'){
             this.setState({
                 ...this.state,
-                dogs: true,
+                dogs: !this.state.dogs,
             })
         }
         if(selector === 'cats'){
             this.setState({
                 ...this.state,
-                cats: true,
+                cats: !this.state.cats,
             })
         }
         if(selector === 'kids'){
             this.setState({
                 ...this.state,
-                kids: true,
+                kids: !this.state.kids,
             })
         }
         if(selector === 'other_animals'){
             this.setState({
                 ...this.state,
-                other_animals: true,
+                other_animals: !this.state.other_animals,
             })
         }
         if(selector === 'single_animal'){
             this.setState({
                 ...this.state,
-                single_animal: true,
+                single_animal: !this.state.single_animal,
             })
         }
         if(selector === 'dog_park'){
             this.setState({
                 ...this.state,
-                dog_park: true,
+                dog_park: !this.state.dog_park,
             })
         }
         if(selector === 'crowds'){
             this.setState({
                 ...this.state,
-                crowds: true,
+                crowds: !this.state.crowds,
             })
         }
         if(selector === 'apartment'){
             this.setState({
                 ...this.state,
-                apartment: true,
+                apartment: !this.state.apartment,
             })
         }
         if(selector === 'fence'){
             this.setState({
                 ...this.state,
-                fence: true,
+                fence: !this.state.fence,
             })
         }
         if(selector === 'leash'){
             this.setState({
                 ...this.state,
-                leash: true,
+                leash: !this.state.leash,
             })
         }
     }

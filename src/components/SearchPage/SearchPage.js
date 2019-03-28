@@ -17,7 +17,7 @@ class SearchPage extends Component {
             large: false,
             xlarge: false,
             shedding: false,
-            notshedding: false,
+            not_shedding: false,
             activity_xlow: false,
             activity_low: false,
             activity_medium: false,
@@ -35,15 +35,15 @@ class SearchPage extends Component {
             crowds: false,
             apartment: false,
             fence: false,
-            leash: false,
+            leash_walking: false,
     }
 
 //this will need to redirect to search results page with animal cards
-//   handleClick = () => {
-//     console.log('button clicked');
-//     this.props.dispatch({ type: 'GET_ANIMAL', payload: this.state});
-//     // this.props.dispatch()
-//   }
+  handleClick = () => {
+    console.log('button clicked');
+    this.props.dispatch({ type: 'FILTER_ANIMAL', payload: this.state});    
+    // this.props.dispatch()
+  }
 
 
 //this.state({
@@ -105,7 +105,7 @@ class SearchPage extends Component {
         if(selector === 'notshedding'){
             this.setState({
                 ...this.state,
-                notshedding: !this.state.notshedding,
+                not_shedding: !this.state.not_shedding,
             })
         }
         if(selector === 'activity_xlow'){
@@ -213,7 +213,7 @@ class SearchPage extends Component {
         if(selector === 'leash'){
             this.setState({
                 ...this.state,
-                leash: !this.state.leash,
+                leash_walking: !this.state.leash,
             })
         }
 
@@ -225,7 +225,7 @@ class SearchPage extends Component {
   //figure out how to connect the check boxes to the db to filter through the animals
 
 render() {  
-    console.log("log", this.props.animalls);
+    console.log("log", this.props.getAnimal);
     // console.log('tj',this.props.animalList);
     console.log(this.state);
     
@@ -252,7 +252,7 @@ render() {
         <div className="shedding">
             <p>Shedding</p>
             Yes: <input type="checkbox" onClick={this.handleChangeFor('shedding')}className="shedding-yes"></input>
-            No: <input type="checkbox" onClick={this.handleChangeFor('notshedding')}className="shedding-no"></input>
+            No: <input type="checkbox" onClick={this.handleChangeFor('not_shedding')}className="shedding-no"></input>
         </div>
         <div className="activity">
             <p>Activity Level</p>
@@ -285,7 +285,7 @@ render() {
             Be around multiple strangers at once: <input type="checkbox" onClick={this.handleChangeFor('crowds')} className="social-people"></input>
             Apartment Living: <input type="checkbox" onClick={this.handleChangeFor('apartment')} className="social-apartment"></input>
             Physical fence in yard: <input type="checkbox" onClick={this.handleChangeFor('fence')} className="social-physical-fence"></input>
-            Calm on a leash: <input type="checkbox" onClick={this.handleChangeFor('leash')} className="social-leash-walking"></input>
+            Calm on a leash: <input type="checkbox" onClick={this.handleChangeFor('leash_walking')} className="social-leash-walking"></input>
         </div>
         
         <button onClick={this.handleClick}>Search</button>

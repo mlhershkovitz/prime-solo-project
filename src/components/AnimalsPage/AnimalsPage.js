@@ -23,9 +23,7 @@ class AnimalsPage extends Component {
 
   //component did mount to make sure the page loads correctly
   componentDidMount() {
-    // this.getAnimals();
-    this.props.dispatch({ type: 'FETCH_ANIMAL' });
-    
+     this.getAnimals();    
   };// end component did mount
 
   //will for sure need get request in here

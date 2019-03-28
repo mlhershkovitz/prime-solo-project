@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 });
-router.get('/dog', (req,res)=>{
+router.post('/dog', (req,res)=>{
+    console.log('server side POST route hit');
     const queryString = `
                             SELECT "dog"."name" FROM "attributes" 
                             JOIN "dog" ON "dog"."id" = "attributes"."dog_id"
@@ -30,29 +31,30 @@ router.get('/dog', (req,res)=>{
                             "xlarge" = $7 AND
 
                             "shedding" = $8 OR
-                            "not-shedding" = $9 AND
+                            "not_shedding" = $9 AND
 
-                            "activity-xlow" = $10 OR 
-                            "activity-low" = $11 OR 
-                            "activity-medium" = $12 OR 
-                            "activity-high" = $13 OR 
-                            "activity-xhigh" = $14 AND
+                            "activity_xlow" = $10 OR 
+                            "activity_low" = $11 OR 
+                            "activity_medium" = $12 OR 
+                            "activity_high" = $13 OR 
+                            "activity_xhigh" = $14 AND
 
-                            "train-basics" = $15 AND
+                            "train_basics" = $15 AND
 
-                            "train-easy" = $16 OR 
-                            "train-hard" = $17 AND
+                            "train_easy" = $16 OR 
+                            "train_hard" = $17 AND
 
                             "dogs" = $18 AND
                             "cats" = $19 AND
                             "kids" = $20 AND
-                            "other-animals" = $21 AND
-                            "single-animal" = $22 AND
-                            "dog-park" = $23 AND
+                            "other_animals" = $21 AND
+                            "single_animal" = $22 AND
+                            "dog_park" = $23 AND
                             "crowds" = $24 AND
                             "apartment" = $25 AND
-                            "physical-fence" = $26 AND
-                            "leash-walking" = $27;`;
+                            "fence" = $26 AND
+                            "leash_walking" = $27;`;
+                            console.log(req.body);
     const queryValues = [req.body.female, req.body.male,
                 req.body.xsmall,
                 req.body.small,
@@ -60,30 +62,29 @@ router.get('/dog', (req,res)=>{
                 req.body.large,
                 req.body.xlarge,
                 req.body.shedding,
-                req.body.not-shedding,
-                req.body.activity-xlow,
-                req.body.activity-low,
-                req.body.activity-medium,
-                req.body.activity-high,
-                req.body.activity-xhigh,
-                req.body.train-basics,
-                req.body.train-easy,
-                req.body.train-hard,
+                req.body.not_shedding,
+                req.body.activity_xlow,
+                req.body.activity_low,
+                req.body.activity_medium,
+                req.body.activity_high,
+                req.body.activity_xhigh,
+                req.body.train_basics,
+                req.body.train_easy,
+                req.body.train_hard,
                 req.body.dogs,
                 req.body.cats,
                 req.body.kids,
-                req.body.other-animals,
-                req.body.single-animal,
-                req.body.dog-park,
+                req.body.other_animals,
+                req.body.single_animal,
+                req.body.dog_park,
                 req.body.crowds,
                 req.body.apartment,
-                req.body.physical-fence,
-                req.body.leash-walking];
+                req.body.fence,
+                req.body.leash_walking];
 
     pool.query(queryString, queryValues)
     .then((result) => { res.send(result.rows)
     console.log(result)})
-    
 })
 /**
  * POST route template

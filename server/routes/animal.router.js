@@ -30,7 +30,7 @@ router.get('/dog', (req,res)=>{
                             "xlarge" = $7 AND
 
                             "shedding" = $8 OR
-                            "not shedding" = $9 AND
+                            "not-shedding" = $9 AND
 
                             "activity-xlow" = $10 OR 
                             "activity-low" = $11 OR 
@@ -53,7 +53,32 @@ router.get('/dog', (req,res)=>{
                             "apartment" = $25 AND
                             "physical-fence" = $26 AND
                             "leash-walking" = $27;`;
-    const queryValues = req.body;
+    const queryValues = [req.body.female, req.body.male,
+                req.body.xsmall,
+                req.body.small,
+                req.body.medium,
+                req.body.large,
+                req.body.xlarge,
+                req.body.shedding,
+                req.body.not-shedding,
+                req.body.activity-xlow,
+                req.body.activity-low,
+                req.body.activity-medium,
+                req.body.activity-high,
+                req.body.activity-xhigh,
+                req.body.train-basics,
+                req.body.train-easy,
+                req.body.train-hard,
+                req.body.dogs,
+                req.body.cats,
+                req.body.kids,
+                req.body.other-animals,
+                req.body.single-animal,
+                req.body.dog-park,
+                req.body.crowds,
+                req.body.apartment,
+                req.body.physical-fence,
+                req.body.leash-walking];
 
     pool.query(queryString, queryValues)
     .then((result) => { res.send(result.rows)

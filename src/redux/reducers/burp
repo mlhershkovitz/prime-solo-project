@@ -58,3 +58,31 @@ SELECT "dog"."name" FROM "attributes"
                             WHERE  = TRUE || 
                             WHERE  = TRUE || 
                             WHERE  = TRUE `;
+
+
+male
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        shedding
+        not shedding
+        activity-xlow
+        activity-low
+        activity-medium
+        activity-high
+        activity-xhigh
+        train-basics
+        train-easy
+        train-hard
+        dogs
+        cats
+        kids
+        other-animals
+        single-animal
+        dog-park
+        crowds
+        apartment
+        physical-fence
+        leash-walking];

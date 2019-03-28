@@ -9,14 +9,40 @@ class AddAnimalForm extends Component {
     
   render() { 
     //console.log(this.props.animalList);
-
-      return (
-        <div>
+    return (
+    <div>
         <h1>Add an Animal</h1>
-            <div>
+        <div>
             <h6>{animal.name}</h6>
             <ul>
-              <li>{animal.gender}</li>
+                <li>
+                    Name:
+                    <input placeholder="Name"
+                    value={this.state.name}
+                    onChange = {this.handleChange('name')}/>
+                </li>
+                <li>
+                    Gender:
+                    <label>
+                        <input
+                        type="radio"
+                        value="female"
+                        checked={this.state.female === "female"}
+                        onChange={this.handleChange('female')}/>
+                        Female
+                    </label>
+                </li>
+                <li>
+                    <input placeholder="Name"
+                    value={this.state.name}
+                    onChange = {this.handleChange('name')}/>
+                </li>
+                <li>
+                    <input placeholder="Name"
+                    value={this.state.name}
+                    onChange = {this.handleChange('name')}/>
+                </li>
+
               <li>{animal.age}</li>
               <li>{animal.size}</li>
               <li>{animal.breed}</li>

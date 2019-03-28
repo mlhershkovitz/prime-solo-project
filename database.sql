@@ -64,6 +64,14 @@ VALUES (NULL, 't', NULL, NULL, NULL, 't', NULL, 't', NULL, NULL, NULL, NULL, NUL
 (NULL, 't', NULL, NULL, NULL, 't', NULL, 't', NULL, NULL, NULL, NULL, 't', NULL, 't', 't', NULL, 't', 't', NULL, 't', NULL, 't', NULL, NULL, NULL, 't', 2),
 ('t', NULL, NULL, 't', NULL, NULL, NULL, 't', NULL, NULL, 't', NULL, NULL, NULL, 't', NULL, 't', 't', NULL, 't', 't', NULL, NULL, 't', 't', NULL, 't', 3);
 
+
+ALTER TABLE "dog" 
+ADD COLUMN "img_url" VARCHAR(2000);
+
+ALTER TABLE "dog" 
+ADD COLUMN "dog_bio" VARCHAR;
+
+
 -- Activity level
 -- snuggle level
 -- how often to get groomed

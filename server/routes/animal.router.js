@@ -84,7 +84,7 @@ router.post('/dog', (req,res)=>{
 
     pool.query(queryString, queryValues)
     .then((result) => { res.send(result.rows)
-    console.log(result)})
+    console.log('filter results', result)})
 })
 /**
  * POST route template

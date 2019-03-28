@@ -7,35 +7,36 @@ CREATE TABLE "user" (
 
 CREATE TABLE "attributes" (
     "id" SERIAL PRIMARY KEY,
-    "female" BOOL DEFAULT 't',
-    "male" BOOL DEFAULT 't',
-    "xsmall" BOOL DEFAULT 't',
-    "small" BOOL DEFAULT 't',
-    "medium" BOOL DEFAULT 't',
-    "large" BOOL DEFAULT 't',
-    "xlarge" BOOL DEFAULT 't',
-    "shedding" BOOL DEFAULT 't',
-    "not shedding" BOOL DEFAULT 't',
-    "activity-xlow" BOOL DEFAULT 't',
-    "activity-low" BOOL DEFAULT 't',
-    "activity-medium" BOOL DEFAULT 't',
-    "activity-high" BOOL DEFAULT 't',
-    "activity-xhigh" BOOL DEFAULT 't',
-    "train-basics" BOOL DEFAULT 't',
-    "train-easy" BOOL DEFAULT 't',
-    "train-hard" BOOL DEFAULT 't',
-    "dogs" BOOL DEFAULT 't',
-    "cats" BOOL DEFAULT 't',
-    "kids" BOOL DEFAULT 't',
-    "other-animals" BOOL DEFAULT 't',
-    "single-animal" BOOL DEFAULT 't',
-    "dog-park" BOOL DEFAULT 't',
-    "crowds" BOOL DEFAULT 't',
-    "apartment" BOOL DEFAULT 't',
-    "physical-fence" BOOL DEFAULT 't',
-    "leash-walking" BOOL DEFAULT 't',
-    "dog_id" INT REFERENCES "dogs"
+    "female" BOOL,
+    "male" BOOL,
+    "xsmall" BOOL,
+    "small" BOOL,
+    "medium" BOOL,
+    "large" BOOL,
+    "xlarge" BOOL,
+    "shedding" BOOL,
+    "not_shedding" BOOL,
+    "activity_xlow" BOOL,
+    "activity_low" BOOL,
+    "activity_medium" BOOL,
+    "activity_high" BOOL,
+    "activity_xhigh" BOOL,
+    "train_basics" BOOL,
+    "train_easy" BOOL,
+    "train_hard" BOOL,
+    "dogs" BOOL,
+    "cats" BOOL,
+    "kids" BOOL,
+    "other_animals" BOOL,
+    "single_animal" BOOL,
+    "dog_park" BOOL,
+    "crowds" BOOL,
+    "apartment" BOOL,
+    "fence" BOOL,
+    "leash_walking" BOOL,
+    "dog_id" INT REFERENCES "dog"
 );
+
 
 
 CREATE TABLE "dog" (
@@ -58,10 +59,10 @@ VALUES ('Skye', 'Male', '2 years', '70 lbs', 'Shepherd, Husky, Terrior Mix', 'Wh
 ('Luna', 'Female', '13 years', '13 lbs', 'West Highland Terrior Runt', 'White curly hair, needs trims', 'House-trained', 'Spayed', 'Diabetic, calm', 'A lot of personality in a small body, sweet and sassy girl');
 
 
-INSERT INTO "attributes" ("female", "male", "xsmall", "small", "medium", "large", "xlarge", "shedding", "not shedding", "activity-xlow", "activity-low", "activity-medium", "activity-high", "activity-xhigh", "train-basics", "train-easy", "train-hard", "dogs", "cats", "kids", "other-animals", "single-animal", "dog-park", "crowds", "apartment", "physical-fence", "leash-walking", "dog_id")
-VALUES ('f', 't', 'f', 'f', 'f', 't', 'f', 't', 'f', 'f', 'f', 'f', 'f', 't', 't', 't', 'f', 't', 't', 't', 't', 'f', 't', 'f', 'f', 'f', 't', 1),
-('f', 't', 'f', 'f', 'f', 't', 'f', 't', 'f', 'f', 'f', 'f', 't', 'f', 't', 't', 'f', 't', 't', 'f', 't', 'f', 't', 'f', 'f', 'f', 't', 2),
-('t', 'f', 'f', 't', 'f', 'f', 'f', 't', 'f', 'f', 't', 'f', 'f', 'f', 't', 'f', 't', 't', 'f', 't', 't', 'f', 'f', 't', 't', 'f', 't', 3);
+INSERT INTO "attributes" ("female", "male", "xsmall", "small", "medium", "large", "xlarge", "shedding", "not_shedding", "activity_xlow", "activity_low", "activity_medium", "activity_high", "activity_xhigh", "train_basics", "train_easy", "train_hard", "dogs", "cats", "kids", "other_animals", "single_animal", "dog_park", "crowds", "apartment", "fence", "leash_walking", "dog_id")
+VALUES (NULL, 't', NULL, NULL, NULL, 't', NULL, 't', NULL, NULL, NULL, NULL, NULL, 't', 't', 't', NULL, 't', 't', 't', 't', NULL, 't', NULL, NULL, NULL, 't', 1),
+(NULL, 't', NULL, NULL, NULL, 't', NULL, 't', NULL, NULL, NULL, NULL, 't', NULL, 't', 't', NULL, 't', 't', NULL, 't', NULL, 't', NULL, NULL, NULL, 't', 2),
+('t', NULL, NULL, 't', NULL, NULL, NULL, 't', NULL, NULL, 't', NULL, NULL, NULL, 't', NULL, 't', 't', NULL, 't', 't', NULL, NULL, 't', 't', NULL, 't', 3);
 
 -- Activity level
 -- snuggle level

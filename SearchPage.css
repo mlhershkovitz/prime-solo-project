@@ -1,0 +1,26 @@
+.filterHeadings{
+    font-size: 20px;
+   
+}
+
+.searchButton{
+    width: 50%;
+    height: 50px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 15px;
+
+}
+
+.searchButton:hover {
+  background-color: #999966; /* Orange */
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
+.filter{
+    margin-bottom: 20px;
+    text-align: center;
+}

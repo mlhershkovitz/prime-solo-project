@@ -4,21 +4,31 @@ import { connect } from 'react-redux';
 
 class AddAnimalForm extends Component {
   state = {
-    name: '',
-    gender: '',
-
+    addNewDog: {
+      name: '',
+      gender: '',
+      breed: '',
+      coat: '',
+      house_trained: '',
+      fixed: '',
+      health_needs: '',
+      comments: '',
+    }
   }
   
   //dispatch post request
-  
-    
+  handleChange = () => {
+
+  }    
   render() { 
     //console.log(this.props.animalList);
     return (
+      <>
     <div>
         <h1>Add an Animal</h1>
         <div>
             <h6></h6>
+            <form onSubmit={this.addNewDog}>
             <ul>
                 <li>
                     Name:
@@ -31,14 +41,6 @@ class AddAnimalForm extends Component {
                     <input placeholder="gender"
                     value={this.state.gender}
                     onChange = {this.handleChange('gender')}/>
-                    <label>
-                        <input
-                        type="radio"
-                        value="male"
-                        checked={this.state.gender.male === "male"}
-                        onChange={this.handleChange('male')}/>
-                        Male
-                    </label>
                 </li>
                 <li>
                     Breed (or best guess):
@@ -52,7 +54,31 @@ class AddAnimalForm extends Component {
                     value={this.state.coat}
                     onChange = {this.handleChange('coat')}/>
                 </li>
-
+                <li>
+                    House Trained:
+                    <input placeholder="House trained"
+                    value={this.state.house_trained}
+                    onChange = {this.handleChange('house_trained')}/>
+                </li>
+                <li>
+                    Fixed:
+                    <input placeholder="Fixed"
+                    value={this.state.fixed}
+                    onChange = {this.handleChange('fixed')}/>
+                </li>
+                <li>
+                    Health Needs:
+                    <input placeholder="Health Needs"
+                    value={this.state.health_needs}
+                    onChange = {this.handleChange('health_needs')}/>
+                </li>
+                <li>
+                    Comments:
+                    <input placeholder="Comments"
+                    value={this.state.comments}
+                    onChange = {this.handleChange('comments')}/>
+                </li>
+                <Button type='submit'  value='Add New Dog'>Add Dog</Button>
               {/* <li>{animal.age}</li>
               <li>{animal.size}</li>
               <li>{animal.breed}</li>
@@ -62,9 +88,11 @@ class AddAnimalForm extends Component {
               <li>{animal.health_needs}</li>
               <li>{animal.comments}</li> */}
             </ul>
+            </form>
             </div>
           ))}
       </div>
+      </>
       );
     }
   }

@@ -89,12 +89,27 @@ router.post('/dog', (req,res)=>{
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
-
-});
-
-module.exports = router;
-
+// router.post('/', (req, res) => {
+//     const newPlant = req.body;
+//     const queryText = `INSERT INTO plant ("name", "kingdom", "clade", "order", "family", "subfamily", "genus")
+//                       VALUES ($1, $2, $3, $4, $5, $6, $7)`;
+//     const queryValues = [
+//       newPlant.name,
+//       newPlant.kingdom,
+//       newPlant.clade,
+//       newPlant.order,
+//       newPlant.family,
+//       newPlant.subfamily,
+//       newPlant.genus,
+//     ];
+//     pool.query(queryText, queryValues)
+//       .then(() => { res.sendStatus(201); })
+//       .catch((err) => {
+//         console.log('Error completing SELECT plant query', err);
+//         res.sendStatus(500);
+//       });
+//   });
+  
 //delete route
 router.delete('/:id', (req, res) => {
     const queryString = 'DELETE FROM "dog" WHERE id=$1';
@@ -108,3 +123,4 @@ router.delete('/:id', (req, res) => {
       });
   });
 
+  module.exports = router;

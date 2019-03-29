@@ -4,41 +4,46 @@ import { connect } from 'react-redux';
 
 class AddAttributeForm extends Component {
     state = {
-        female: null,
-        male: null,
-        xsmall: null,
-        small: null,
-        medium: null,
-        large: null,
-        xlarge: null,
-        shedding: null,
-        not_shedding: null,
-        activity_xlow: null,
-        activity_low: null,
-        activity_medium: null,
-        activity_high: null,
-        activity_xhigh: null,
-        train_basic: null,
-        train_easy: null,
-        train_hard: null,
-        dogs: null,
-        cats: null,
-        kids: null,
-        other_animals: null,
-        single_animal: null,
-        dog_park: null,
-        crowds: null,
-        apartment: null,
-        fence: null,
-        leash_walking: null,
+        newAnimal: {
+            female: null,
+            male: null,
+            xsmall: null,
+            small: null,
+            medium: null,
+            large: null,
+            xlarge: null,
+            shedding: null,
+            not_shedding: null,
+            activity_xlow: null,
+            activity_low: null,
+            activity_medium: null,
+            activity_high: null,
+            activity_xhigh: null,
+            train_basic: null,
+            train_easy: null,
+            train_hard: null,
+            dogs: null,
+            cats: null,
+            kids: null,
+            other_animals: null,
+            single_animal: null,
+            dog_park: null,
+            crowds: null,
+            apartment: null,
+            fence: null,
+            leash_walking: null,
+        }
     }
   
     addAttributes = () => {
         this.props.dispatch({ type: 'ADD_ATTRIBUTES', payload: this.state});
     }//dispatch post request
 
-    handleChange = () => {
-        
+    handleChange = (key) => (event) => {
+        this.setState({
+                ...this.state.newAnimal,
+                [key]: event.target.value,
+        })
     }
   
     

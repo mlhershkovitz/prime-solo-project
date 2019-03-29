@@ -25,6 +25,7 @@ import RescueAdminPage from '../RescueAdminPage/RescueAdminPage';
 import AddAnimalForm from '../AddAnimal/AddAnimalForm';
 import './App.css';
 import AddAttributeForm from '../AddAnimal/AddAttributeForm';
+import Home from '../Home/Home';
 
 const styles = theme => ({
   root: {
@@ -63,6 +64,11 @@ class App extends Component {
             <Redirect exact from="/" to="/home" />
             {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
+            <Route
+              exact
+              path="/home"
+              component={Home}
+            />
             <Route
               exact
               path="/search"

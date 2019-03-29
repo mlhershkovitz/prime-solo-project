@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 
 
 class AddAnimalForm extends Component {
+  state = {
+    name: '',
+    gender: '',
+
+  }
   
-    //dispatch post request
+  //dispatch post request
   
     
   render() { 
@@ -13,7 +18,7 @@ class AddAnimalForm extends Component {
     <div>
         <h1>Add an Animal</h1>
         <div>
-            <h6>{animal.name}</h6>
+            <h6></h6>
             <ul>
                 <li>
                     Name:
@@ -23,14 +28,9 @@ class AddAnimalForm extends Component {
                 </li>
                 <li>
                     Gender:
-                    <label>
-                        <input
-                        type="radio"
-                        value="female"
-                        checked={this.state.gender.female === "female"}
-                        onChange={this.handleChange('female')}/>
-                        Female
-                    </label>
+                    <input placeholder="gender"
+                    value={this.state.gender}
+                    onChange = {this.handleChange('gender')}/>
                     <label>
                         <input
                         type="radio"
@@ -53,14 +53,14 @@ class AddAnimalForm extends Component {
                     onChange = {this.handleChange('coat')}/>
                 </li>
 
-              <li>{animal.age}</li>
+              {/* <li>{animal.age}</li>
               <li>{animal.size}</li>
               <li>{animal.breed}</li>
               <li>{animal.coat}</li>
               <li>{animal.house_trained}</li>
               <li>{animal.fixed}</li>
               <li>{animal.health_needs}</li>
-              <li>{animal.comments}</li>
+              <li>{animal.comments}</li> */}
             </ul>
             </div>
           ))}

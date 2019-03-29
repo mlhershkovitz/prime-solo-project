@@ -19,7 +19,9 @@ import AnimalsPage from '../AnimalsPage/AnimalsPage';
 
 import UserPage from '../UserPage/UserPage';
 import RescueAdminPage from '../RescueAdminPage/RescueAdminPage';
+import AddAnimalForm from '../AddAnimal/AddAnimalForm';
 import './App.css';
+import AddAttributeForm from '../AddAnimal/AddAttributeForm';
 
 class App extends Component {
   componentDidMount () {
@@ -57,7 +59,7 @@ class App extends Component {
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
             <ProtectedRoute
               exact
-              path="/home"
+              path="/login"
               component={UserPage}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
@@ -66,6 +68,16 @@ class App extends Component {
               exact
               path="/rescue-admin"
               component={RescueAdminPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/add-animal"
+              component={AddAnimalForm}
+            />
+            <ProtectedRoute
+              exact
+              path="/add-attribute"
+              component={AddAttributeForm}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

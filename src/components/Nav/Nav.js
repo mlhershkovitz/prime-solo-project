@@ -11,7 +11,7 @@ const Nav = (props) => (
     </Link>
     <div className="nav-right">
       {/* Always show this link since the about page is not protected */}
-      <Link className="nav-link" to="/">
+      <Link className="nav-link" to="/home">
         Home
       </Link>
       <Link className="nav-link" to="/search">
@@ -24,7 +24,7 @@ const Nav = (props) => (
         Login
       </Link> */}
       
-      <Link className="nav-link" to="/home">
+      <Link className="nav-link" to="/login">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}

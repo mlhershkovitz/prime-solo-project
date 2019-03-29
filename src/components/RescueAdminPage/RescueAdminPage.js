@@ -4,6 +4,8 @@ import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import { TableBody, TableRow, TableCell } from '@material-ui/core';
 import { Button } from '@material-ui/core';
+import { Redirect } from 'react-router';
+
 
 //if need help figuring out the specific of this,
 //look at any of the main components of the feedback app
@@ -47,12 +49,17 @@ class RescueAdminPage extends Component {
     this.setState({
       redirect: true,
     })
-    
+    this.getAnimals();
   } //end click add button
 
 
 
-render() {  
+render() { 
+  
+  if (this.state.redirect) {
+    return < Redirect push to = '/add-animal'/>
+  }
+
     return (
       <>
     <div>

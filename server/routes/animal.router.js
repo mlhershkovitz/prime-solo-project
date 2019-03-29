@@ -91,11 +91,13 @@ router.post('/dog', (req,res)=>{
  */
 router.post('/add-dog', (req, res) => {
     const newDog = req.body;
-    const queryString = `INSERT INTO "dog" ("name", "gender", "age", "size", "breed", "coat", "house_trained", "fixed", "health_needs", "comments")
-                      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`;
+    const queryString = `INSERT INTO "dog" ("name", "gender", "age", "size", "breed", "coat", "house_trained", "fixed", "health_needs", "comments", "img_url", "dog_bio")
+                      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`;
     const queryValues = [
       newDog.name,
       newDog.gender,
+      newDog.age,
+      newDog.size,
       newDog.breed,
       newDog.coat,
       newDog.house_trained,
@@ -103,12 +105,12 @@ router.post('/add-dog', (req, res) => {
       newDog.health_needs,
       newDog.comments,
       newDog.img_url,
-      newDog.dog_bio,
+      newDog.dog_bio
     ];
     pool.query(queryString, queryValues)
       .then(() => { res.sendStatus(201); })
       .catch((err) => {
-        console.log('Error completing SELECT dog query', err);
+        console.log('Error completing INSERT dog query', err);
         res.sendStatus(500);
       });
   });
@@ -148,7 +150,7 @@ router.post('/add-dog', (req, res) => {
     pool.query(queryString, queryValues)
       .then(() => { res.sendStatus(201); })
       .catch((err) => {
-        console.log('Error completing SELECT dog query', err);
+        console.log('Error completing INSERT Attribute query', err);
         res.sendStatus(500);
       });
   });
@@ -161,7 +163,7 @@ router.delete('/:id', (req, res) => {
       .then(() => 
       { res.sendStatus(200); 
     }).catch((err) => {
-        console.log('Error completing SELECT dog query', err);
+        console.log('Error completing DELETE dog query', err);
         res.sendStatus(500);
       });
   });

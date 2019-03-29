@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
-import { Redirect } from 'react-router';
 
 
 class AddAnimalForm extends Component {
   state = {
-    newDog: {
       name: '',
       gender: '',
+      age: '',
+      size: '',
       breed: '',
       coat: '',
       house_trained: '',
@@ -19,7 +19,6 @@ class AddAnimalForm extends Component {
       dog_bio: '',
       redirect: false,
     }
-  }
 
   
   
@@ -27,20 +26,21 @@ class AddAnimalForm extends Component {
   handleChange = (key) => (event) => {
     console.log('event happened')
     this.setState({
-        newDog: {
-            ...this.state.newDog,
+            ...this.state,
             [key]: event.target.value,
-        }
     });
   }
 
   addNewDog = event => {
     event.preventDefault();
-    this.props.dispatch({ type: 'ADD_DOG', payload: this.state.newDog })
+    this.props.dispatch({ type: 'ADD_DOG', payload: this.state })
+    console.log(this.state);
+    
     this.setState({
-      newDog: {
         name: '',
         gender: '',
+        age: '',
+        size: '',
         breed: '',
         coat: '',
         house_trained: '',
@@ -49,7 +49,6 @@ class AddAnimalForm extends Component {
         comments: '',
         img_url: '',
         dog_bio: '',
-        }
     })
   }
 
@@ -58,7 +57,8 @@ class AddAnimalForm extends Component {
   }
   //end handle click function
 
-  render() { 
+  render() {
+     
     return (
       <>
     <div>
@@ -78,6 +78,18 @@ class AddAnimalForm extends Component {
                     <input placeholder="gender"
                     value={this.state.gender}
                     onChange = {this.handleChange('gender')}/>
+                </li>
+                <li>
+                    About how old:
+                    <input placeholder="age"
+                    value={this.state.age}
+                    onChange = {this.handleChange('age')}/>
+                </li>
+                <li>
+                    How many pounds:
+                    <input placeholder="size"
+                    value={this.state.size}
+                    onChange = {this.handleChange('size')}/>
                 </li>
                 <li>
                     Breed (or best guess):
@@ -128,7 +140,7 @@ class AddAnimalForm extends Component {
                     value={this.state.dog_bio}
                     onChange = {this.handleChange('dog_bio')}/>
                 </li>
-                
+
                 <Button type='submit'  value='Add New Dog'>Add Dog</Button>
             </ul>
             </form>

@@ -30,7 +30,7 @@ function* getAnimal(action){
     try{
         yield axios.delete( `api/animal/${action.payload}`)
         
-        yield put({type: 'FETCH_ANIMAL'})
+        yield put({type: 'ADD_ANIMAL'})
     } catch(error){
         console.log('DELETE ', error)
     }

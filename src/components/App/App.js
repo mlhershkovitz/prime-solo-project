@@ -7,6 +7,9 @@ import {
 } from 'react-router-dom';
 
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
@@ -23,16 +26,38 @@ import AddAnimalForm from '../AddAnimal/AddAnimalForm';
 import './App.css';
 import AddAttributeForm from '../AddAnimal/AddAttributeForm';
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
+  control: {
+    padding: theme.spacing.unit * 2,
+  },
+});
+
 class App extends Component {
+
+  state = {
+    spacing: '16',
+  };
+
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'})
   }
 
   render() {
+    const { classes } = this.props;
+    const { spacing } = this.state;
     return (
       <Router>
         <div>
           <Nav />
+          <Grid container className={classes.root} spacing={16} justify="center">
+          <Grid item xs={10} justify="center">
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
@@ -82,10 +107,16 @@ class App extends Component {
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>
+          </Grid>
+          </Grid>
           <Footer />
         </div>
       </Router>
   )}
 }
 
-export default connect()(App);
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default connect()(withStyles(styles)(App));

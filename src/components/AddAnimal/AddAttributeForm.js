@@ -33,8 +33,13 @@ class AddAttributeForm extends Component {
         leash_walking: null,
     }
   
+    addAttributes = () => {
+        this.props.dispatch({ type: 'ADD_ATTRIBUTES', payload: this.state});
+    }//dispatch post request
 
-    //dispatch post request
+    handleChange = () => {
+        
+    }
   
     
   render() { 
@@ -258,56 +263,36 @@ class AddAttributeForm extends Component {
                     <label>
                         <input
                         type="radio"
-                        value="not_shedding"
-                        checked={this.state.not_shedding === "not_shedding"}
-                        onChange={this.handleChange('not_shedding')}/>
-                        Not Shedding
+                        value="crowds"
+                        checked={this.state.crowds === "crowds"}
+                        onChange={this.handleChange('crowds')}/>
+                        Be around multiple strangers
                     </label>
                     <label>
                         <input
                         type="radio"
-                        value="small"
-                        checked={this.state.small === "small"}
-                        onChange={this.handleChange('small')}/>
-                        Small (8-29 lbs)
+                        value="apartment"
+                        checked={this.state.apartment === "apartment"}
+                        onChange={this.handleChange('apartment')}/>
+                        Okay with apartment living
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        value="fence"
+                        checked={this.state.fence === "fence"}
+                        onChange={this.handleChange('fence')}/>
+                        Needs a physical fence in the yard
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        value="leash_walking"
+                        checked={this.state.leash_walking === "leash_walking"}
+                        onChange={this.handleChange('leash_walking')}/>
+                        Calm walking on a leash
                     </label>
                 </li>
-                <li>
-                    Shedding:
-                    <label>
-                        <input
-                        type="radio"
-                        value="shedding"
-                        checked={this.state.shedding === "shedding"}
-                        onChange={this.handleChange('shedding')}/>
-                        Shedding
-                    </label>
-                    <label>
-                        <input
-                        type="radio"
-                        value="not_shedding"
-                        checked={this.state.not_shedding === "not_shedding"}
-                        onChange={this.handleChange('not_shedding')}/>
-                        Not Shedding
-                    </label>
-                    <label>
-                        <input
-                        type="radio"
-                        value="small"
-                        checked={this.state.small === "small"}
-                        onChange={this.handleChange('small')}/>
-                        Small (8-29 lbs)
-                    </label>
-                </li>
-
-              <li>{animal.age}</li>
-              <li>{animal.size}</li>
-              <li>{animal.breed}</li>
-              <li>{animal.coat}</li>
-              <li>{animal.house_trained}</li>
-              <li>{animal.fixed}</li>
-              <li>{animal.health_needs}</li>
-              <li>{animal.comments}</li>
             </ul>
             </div>
           ))}

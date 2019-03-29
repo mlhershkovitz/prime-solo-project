@@ -3,12 +3,18 @@ import { connect } from 'react-redux';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import { TableBody, TableRow, TableCell } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 //if need help figuring out the specific of this,
 //look at any of the main components of the feedback app
 
 //need to figure out the material ui cards!
 class RescueAdminPage extends Component {
+
+  state = {
+    redirect: false,
+  }
+
   componentDidMount() {
     this.getAnimals();
   };// end component did mount
@@ -35,12 +41,26 @@ class RescueAdminPage extends Component {
   //   this.props.dispatch({type: 'ADOPT_ME', payload: event.target.value})
   // }
 
+  handleClickAdd = (event) => {
+    event.preventDefault();
+    console.log('button clicked');
+    this.setState({
+      redirect: true,
+    })
+    
+  } //end click add button
+
+
+
 render() {  
     return (
       <>
     <div>
         <h1>Rescue Admin</h1>
+        <Button onClick={this.handleClickAdd}>Add An Animal</Button>
     </div>
+    <br />
+    <br />
     <div className="rescueTable">
       <Table>
         <TableHead className="table">

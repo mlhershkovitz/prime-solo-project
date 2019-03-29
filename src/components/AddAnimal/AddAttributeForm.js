@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 
 class AddAttributeForm extends Component {
@@ -44,6 +45,43 @@ class AddAttributeForm extends Component {
                 ...this.state.newAnimal,
                 [key]: event.target.value,
         })
+        console.log(this.state.newAnimal);
+        
+    }
+    addNewAnimal = event => {
+        event.preventDefault();
+        this.props.dispatch({ type: 'ADD_ATTRIBUTE', payload: this.state.newAnimal })
+        this.setState({
+            newAnimal: {
+                female: null,
+                male: null,
+                xsmall: null,
+                small: null,
+                medium: null,
+                large: null,
+                xlarge: null,
+                shedding: null,
+                not_shedding: null,
+                activity_xlow: null,
+                activity_low: null,
+                activity_medium: null,
+                activity_high: null,
+                activity_xhigh: null,
+                train_basic: null,
+                train_easy: null,
+                train_hard: null,
+                dogs: null,
+                cats: null,
+                kids: null,
+                other_animals: null,
+                single_animal: null,
+                dog_park: null,
+                crowds: null,
+                apartment: null,
+                fence: null,
+                leash_walking: null,
+            }
+        });
     }
   
     
@@ -54,6 +92,7 @@ class AddAttributeForm extends Component {
         <h1>Add an Animal</h1>
         <div>
             <h6>Click on whichever attribute best describes your new arrival.</h6>
+            <form onSubmit={this.addNewAttribute}>
             <ul>
                 <li>
                     Gender:
@@ -61,7 +100,7 @@ class AddAttributeForm extends Component {
                         <input
                         type="radio"
                         value="female"
-                        checked={this.state.gender.female === "female"}
+                        checked={this.state.female === "female"}
                         onChange={this.handleChange('female')}/>
                         Female
                     </label>
@@ -69,7 +108,7 @@ class AddAttributeForm extends Component {
                         <input
                         type="radio"
                         value="male"
-                        checked={this.state.gender.male === "male"}
+                        checked={this.state.male === "male"}
                         onChange={this.handleChange('male')}/>
                         Male
                     </label>
@@ -299,8 +338,9 @@ class AddAttributeForm extends Component {
                     </label>
                 </li>
             </ul>
+            <Button type='submit'  value='Add New Dog Attributes'>Add Dog</Button>
+            </form>
             </div>
-          ))}
       </div>
       );
     }

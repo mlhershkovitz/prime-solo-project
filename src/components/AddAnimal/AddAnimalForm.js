@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
+import { Redirect } from 'react-router';
 
 
 class AddAnimalForm extends Component {
   state = {
-    addNewDog: {
+    newDog: {
       name: '',
       gender: '',
       breed: '',
@@ -13,21 +15,51 @@ class AddAnimalForm extends Component {
       fixed: '',
       health_needs: '',
       comments: '',
+      redirect: false,
     }
   }
+
+  
   
   //dispatch post request
-  handleChange = () => {
+  handleChange = (key) => (event) => {
+    console.log('event happened')
+    this.setState({
+        newDog: {
+            ...this.state.newDog,
+            [key]: event.target.value,
+        }
+    });
+  }
 
-  }    
+  addNewDog = event => {
+    event.preventDefault();
+    this.props.dispatch({ type: 'ADD_DOG', payload: this.state.newDog })
+    this.setState({
+      newDog: {
+        name: '',
+        gender: '',
+        breed: '',
+        coat: '',
+        house_trained: '',
+        fixed: '',
+        health_needs: '',
+        comments: '',
+        }
+    });
+  }
+
+  handleClick = () => {
+    this.props.history.push('/add-attribute');
+  }//end handle click function
+
   render() { 
-    //console.log(this.props.animalList);
     return (
       <>
     <div>
         <h1>Add an Animal</h1>
         <div>
-            <h6></h6>
+          
             <form onSubmit={this.addNewDog}>
             <ul>
                 <li>
@@ -79,18 +111,10 @@ class AddAnimalForm extends Component {
                     onChange = {this.handleChange('comments')}/>
                 </li>
                 <Button type='submit'  value='Add New Dog'>Add Dog</Button>
-              {/* <li>{animal.age}</li>
-              <li>{animal.size}</li>
-              <li>{animal.breed}</li>
-              <li>{animal.coat}</li>
-              <li>{animal.house_trained}</li>
-              <li>{animal.fixed}</li>
-              <li>{animal.health_needs}</li>
-              <li>{animal.comments}</li> */}
             </ul>
             </form>
+            <Button onClick={this.handleClick}>Next page</Button>
             </div>
-          ))}
       </div>
       </>
       );

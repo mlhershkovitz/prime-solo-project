@@ -89,26 +89,67 @@ router.post('/dog', (req,res)=>{
 /**
  * POST route template
  */
-// router.post('/', (req, res) => {
-//     const newPlant = req.body;
-//     const queryText = `INSERT INTO plant ("name", "kingdom", "clade", "order", "family", "subfamily", "genus")
-//                       VALUES ($1, $2, $3, $4, $5, $6, $7)`;
-//     const queryValues = [
-//       newPlant.name,
-//       newPlant.kingdom,
-//       newPlant.clade,
-//       newPlant.order,
-//       newPlant.family,
-//       newPlant.subfamily,
-//       newPlant.genus,
-//     ];
-//     pool.query(queryText, queryValues)
-//       .then(() => { res.sendStatus(201); })
-//       .catch((err) => {
-//         console.log('Error completing SELECT plant query', err);
-//         res.sendStatus(500);
-//       });
-//   });
+router.post('/add-dog', (req, res) => {
+    const newDog = req.body;
+    const queryString = `INSERT INTO "dog" ("name", "gender", "age", "size", "breed", "coat", "house_trained", "fixed", "health_needs", "comments")
+                      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`;
+    const queryValues = [
+      newDog.name,
+      newDog.gender,
+      newDog.breed,
+      newDog.coat,
+      newDog.house_trained,
+      newDog.fixed,
+      newDog.health_needs,
+      newDog.comments,
+    ];
+    pool.query(queryString, queryValues)
+      .then(() => { res.sendStatus(201); })
+      .catch((err) => {
+        console.log('Error completing SELECT dog query', err);
+        res.sendStatus(500);
+      });
+  });
+
+  router.post('/attribute', (req, res) => {
+    const queryString = `INSERT INTO "attributes" ("female", "male", "xsmall", "small", "medium", "large", "xlarge", "shedding", "not_shedding", "activity_xlow", "activity_low", "activity_medium", "activity_high", "activity_xhigh", "train_basics", "train_easy", "train_hard", "dogs", "cats", "kids", "other_animals", "single_animal", "dog_park", "crowds", "apartment", "fence", "leash_walking", "dog_id")
+                      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27)`;
+    const queryValues = [
+        req.body.female, 
+        req.body.male,
+        req.body.xsmall,
+        req.body.small,
+        req.body.medium,
+        req.body.large,
+        req.body.xlarge,
+        req.body.shedding,
+        req.body.not_shedding,
+        req.body.activity_xlow,
+        req.body.activity_low,
+        req.body.activity_medium,
+        req.body.activity_high,
+        req.body.activity_xhigh,
+        req.body.train_basics,
+        req.body.train_easy,
+        req.body.train_hard,
+        req.body.dogs,
+        req.body.cats,
+        req.body.kids,
+        req.body.other_animals,
+        req.body.single_animal,
+        req.body.dog_park,
+        req.body.crowds,
+        req.body.apartment,
+        req.body.fence,
+        req.body.leash_walking];
+
+    pool.query(queryString, queryValues)
+      .then(() => { res.sendStatus(201); })
+      .catch((err) => {
+        console.log('Error completing SELECT dog query', err);
+        res.sendStatus(500);
+      });
+  });
   
 //delete route
 router.delete('/:id', (req, res) => {

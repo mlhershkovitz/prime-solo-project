@@ -46,31 +46,25 @@ class RescueAdminPage extends Component {
   handleClickAdd = (event) => {
     event.preventDefault();
     console.log('button clicked');
-    this.setState({
-      redirect: true,
-    })
-    this.getAnimals();
+    this.props.history.push('/add-animal');
   } //end click add button
 
 
 
 render() { 
-  
-  if (this.state.redirect) {
-    return < Redirect push to = '/add-animal'/>
-  }
 
     return (
       <>
     <div>
         <h1>Rescue Admin</h1>
-        <Button onClick={this.handleClickAdd}>Add An Animal</Button>
+        <button onClick={this.handleClickAdd}>Add An Animal</button>
     </div>
     <br />
     <br />
     <div className="rescueTable">
       <Table>
         <TableHead className="table">
+        <tr>
           <th>Name</th>
           <th>Gender</th>
           <th>Age</th>
@@ -83,10 +77,11 @@ render() {
           <th>Comments</th>
           <th>Delete</th>
           <th>Adopted!</th>
+        </tr>
         </TableHead>
-      {this.props.animalList.map((animal) => (
         <TableBody>
-          <TableRow>
+      {this.props.animalList.map((animal) => (
+          <TableRow key={animal.id}>
             <TableCell>{animal.name}</TableCell>
             <TableCell>{animal.gender}</TableCell>
             <TableCell>{animal.age}</TableCell>
@@ -103,8 +98,8 @@ render() {
             {/* <TableCell><button value={animal.id} 
             onClick={this.handleAdopt(this.value)}>Adopted</button></TableCell> */}
           </TableRow>
-        </TableBody>
         ))}
+        </TableBody>
       </Table>
       </div>
     </>

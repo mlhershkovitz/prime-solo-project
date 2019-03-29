@@ -36,19 +36,19 @@ function* getAnimal(action){
     }
   }
 
-  // function* postAnimal(action){
-  //   console.log('post animal route hit');
-  //   try {
-  //     const response = yield axios.post('/api/animal/add-dog', action.payload);
-  //     yield put ({ type: 'ADD_DOG', payload: response.data})
-  //     console.log('add dog', response.data);
+  function* postAnimal(action){
+    console.log('post animal route hit');
+    try {
+      const response = yield axios.post('/api/animal/add-dog', action.payload);
+      yield put ({ type: 'ADD_DOG', payload: response.data})
+      console.log('add dog', response.data);
       
-  //   }
-  //     catch(error) {
-  //       console.log('errors of life:', error);
+    }
+      catch(error) {
+        console.log('Error in Dog post:', error);
         
-  //     }
-  //   }
+      }
+    }
 
   //   function* postAttribute(action){
   //     console.log('post animal route hit');
@@ -66,7 +66,7 @@ function* projectSaga() {
   yield takeLatest('FETCH_ANIMAL', fetchAnimal);
   yield takeLatest('FILTER_ANIMAL', getAnimal)
   yield takeLatest('DELETE_ME', deleteMe);
-  // yield takeLatest('ADD_DOG', postAnimal);
+  yield takeLatest('ADD_DOG', postAnimal);
   // yield takeLatest('ADD_ATTRIBUTE', postAttribute)
 }
 

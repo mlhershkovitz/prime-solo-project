@@ -91,7 +91,7 @@ class AddAttributeForm extends Component {
     <div>
         <h1>Add an Animal</h1>
         <div>
-            <h6>Click on whichever attribute best describes your new arrival.</h6>
+            <h4>Click on whichever attribute best describes your new arrival.</h4>
             <form onSubmit={this.addNewAttribute}>
             <ul>
                 <li>

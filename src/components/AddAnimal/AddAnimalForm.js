@@ -15,6 +15,8 @@ class AddAnimalForm extends Component {
       fixed: '',
       health_needs: '',
       comments: '',
+      img_url: '',
+      dog_bio: '',
       redirect: false,
     }
   }
@@ -45,13 +47,16 @@ class AddAnimalForm extends Component {
         fixed: '',
         health_needs: '',
         comments: '',
+        img_url: '',
+        dog_bio: '',
         }
-    });
+    })
   }
 
   handleClick = () => {
     this.props.history.push('/add-attribute');
-  }//end handle click function
+  }
+  //end handle click function
 
   render() { 
     return (
@@ -110,6 +115,20 @@ class AddAnimalForm extends Component {
                     value={this.state.comments}
                     onChange = {this.handleChange('comments')}/>
                 </li>
+                <li>
+                    Upload adorable image:
+                    <input placeholder="Image URL"
+                    value = {this.state.img_url}
+                    type = 'link'
+                    onChange = {this.handleChange('img_url')}/>
+                </li>
+                <li>
+                    Biography:
+                    <input placeholder="Biography"
+                    value={this.state.dog_bio}
+                    onChange = {this.handleChange('dog_bio')}/>
+                </li>
+                
                 <Button type='submit'  value='Add New Dog'>Add Dog</Button>
             </ul>
             </form>

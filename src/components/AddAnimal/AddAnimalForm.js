@@ -27,20 +27,30 @@ class AddAnimalForm extends Component {
                         <input
                         type="radio"
                         value="female"
-                        checked={this.state.female === "female"}
+                        checked={this.state.gender.female === "female"}
                         onChange={this.handleChange('female')}/>
                         Female
                     </label>
+                    <label>
+                        <input
+                        type="radio"
+                        value="male"
+                        checked={this.state.gender.male === "male"}
+                        onChange={this.handleChange('male')}/>
+                        Male
+                    </label>
                 </li>
                 <li>
-                    <input placeholder="Name"
-                    value={this.state.name}
-                    onChange = {this.handleChange('name')}/>
+                    Breed (or best guess):
+                    <input placeholder="Breed"
+                    value={this.state.breed}
+                    onChange = {this.handleChange('breed')}/>
                 </li>
                 <li>
-                    <input placeholder="Name"
-                    value={this.state.name}
-                    onChange = {this.handleChange('name')}/>
+                    Coat:
+                    <input placeholder="Coat"
+                    value={this.state.coat}
+                    onChange = {this.handleChange('coat')}/>
                 </li>
 
               <li>{animal.age}</li>

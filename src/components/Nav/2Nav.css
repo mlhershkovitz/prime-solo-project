@@ -7,17 +7,14 @@
 }
 
 .nav {
-  height: 250px;
-  background-image: url('./dog.jpg');
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
+  overflow: hidden;
+  background-color: #00acb0;
 }
-
 
 .nav-link {
   float: left;
   color: #f2f2f2;
+  background-color: #00acb0;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -31,14 +28,9 @@
 }
 
 .nav-link:hover {
-  background-color: #999966;
+  background-color: #008183;
 }
 
 .nav-right {
   float: right;
-}
-
-h1{
-  color: #999966;
-  text-shadow: 1px 2px black;
 }

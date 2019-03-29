@@ -13,7 +13,7 @@ function* fetchAnimal() {
 }
 
 function* getAnimal(action){
-  console.log('post animal route hit');
+  console.log('get animal route hit');
   try {
     const response = yield axios.post('/api/animal/dog', action.payload);
     yield put ({ type: 'ADD_ANIMAL', payload: response.data})
@@ -40,7 +40,6 @@ function* getAnimal(action){
     console.log('post animal route hit');
     try {
       const response = yield axios.post('/api/animal/add-dog', action.payload);
-      yield put ({ type: 'ADD_DOG', payload: response.data})
       console.log('add dog', response.data);
       
     }

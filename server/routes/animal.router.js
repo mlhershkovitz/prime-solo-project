@@ -108,9 +108,10 @@ router.post('/add-dog', (req, res) => {
       newDog.dog_bio
     ];
     pool.query(queryString, queryValues)
-      .then(() => { res.sendStatus(201); })
-      .catch((err) => {
-        console.log('Error completing INSERT dog query', err);
+      .then(() => {
+        res.sendStatus(201); 
+    }).catch((error) => {
+        console.log('Error completing INSERT dog query', error);
         res.sendStatus(500);
       });
   });
@@ -148,8 +149,9 @@ router.post('/add-dog', (req, res) => {
         req.body.leash_walking];
 
     pool.query(queryString, queryValues)
-      .then(() => { res.sendStatus(201); })
-      .catch((err) => {
+      .then(() => 
+      { res.sendStatus(201); 
+    }).catch((err) => {
         console.log('Error completing INSERT Attribute query', err);
         res.sendStatus(500);
       });

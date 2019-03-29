@@ -1,5 +1,4 @@
 const animalList = (state = [], action) => {
-  console.log('animalListReducer', action.type)
     switch (action.type) {
       case 'ADD_ANIMAL':
         return  action.payload

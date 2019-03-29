@@ -102,6 +102,8 @@ router.post('/add-dog', (req, res) => {
       newDog.fixed,
       newDog.health_needs,
       newDog.comments,
+      newDog.img_url,
+      newDog.dog_bio,
     ];
     pool.query(queryString, queryValues)
       .then(() => { res.sendStatus(201); })

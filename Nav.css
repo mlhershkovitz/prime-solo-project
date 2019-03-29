@@ -1,0 +1,44 @@
+.nav-title {
+    font-size: 24px;
+    font-weight: 700;
+    display: inline-block;
+    color: #f2f2f2;
+    padding-left: 10px;
+}
+
+.nav {
+  height: 250px;
+  background-image: url('./dog.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+
+.nav-link {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 24px 10px;
+  text-decoration: none;
+  font-size: 15px;
+
+  /* these last two make the logout button in
+  the nav bar look like another link */
+  border:none;
+  cursor: pointer;
+  outline:0;
+}
+
+.nav-link:hover {
+  background-color: #999966;
+}
+
+.nav-right {
+  float: right;
+}
+
+h1{
+  color: #999966;
+  text-shadow: 1px 2px black;
+}

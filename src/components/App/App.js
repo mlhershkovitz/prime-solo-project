@@ -21,7 +21,7 @@ import UserPage from '../UserPage/UserPage';
 import RescueAdminPage from '../RescueAdminPage/RescueAdminPage';
 import AddAnimalForm from '../AddAnimal/AddAnimalForm';
 import './App.css';
-import AddAttributeForm from '../AddAnimal/AddAttributeForm';
+import AddAttributeForm from '../RescueAdminPage/AddAttributeForm';
 import Home from '../Home/Home';
 
 class App extends Component {

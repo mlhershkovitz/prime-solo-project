@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import { FormHelperText } from '@material-ui/core';
 
-//if need help figuring out the specific of this,
-//look at any of the main components of the feedback app
 
-const styles = theme => ({
-  card: {
-    maxWidth: 400,
-    margin: 20
-  }
-});
+// const styles = theme => ({
+//   card: {
+//     maxWidth: 400,
+//     margin: 20
+//   }
+// });
 
 //need to figure out the material ui cards!
-class AnimalsPage extends Component {
+class BioPage extends Component {
 
   //component did mount to make sure the page loads correctly
   componentDidMount() {
@@ -40,18 +32,13 @@ render() {
    
     return (
       <div>
-      <h1>All Animals</h1>
-    <div style={{
-      display: 'flex',
+      <h1>Hello there, my name is {this.props.animalList.name}!</h1>
 
-    }}>
-        
-        
-        {this.props.animalList.map((animal) => (
-          <Card className={classes.card} key={animal.id}>
-          <div>
-          <h6>{animal.name}</h6>
+      {this.props.animalList.map((dog) => (
+        <div>
+          <h5>{animal.name}</h5>
           <ul>
+            <h6>Quick Facts</h6>
             <li>{animal.gender}</li>
             <li>{animal.age}</li>
             <li>{animal.size}</li>
@@ -65,9 +52,7 @@ render() {
             <li>{animal.dog_bio}</li> */}
           </ul>
           </div>
-          </Card>
         ))}
-    </div>
     </div>
     );
   }
@@ -77,4 +62,4 @@ const mapReduxStateToProps = (reduxState) => {
   return reduxState;
 };
 
-export default connect(mapReduxStateToProps)(withStyles(styles)(AnimalsPage));
+export default connect(mapReduxStateToProps)(withStyles(styles)(BioPage));

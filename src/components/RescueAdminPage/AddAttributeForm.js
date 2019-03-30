@@ -5,7 +5,45 @@ import { Button } from '@material-ui/core';
 
 class AddAttributeForm extends Component {
     state = {
-        newAnimal: {
+        female: null,
+        male: null,
+        xsmall: null,
+        small: null,
+        medium: null,
+        large: null,
+        xlarge: null,
+        shedding: null,
+        not_shedding: null,
+        activity_xlow: null,
+        activity_low: null,
+        activity_medium: null,
+        activity_high: null,
+        activity_xhigh: null,
+        train_basic: null,
+        train_easy: null,
+        train_hard: null,
+        dogs: null,
+        cats: null,
+        kids: null,
+        other_animals: null,
+        single_animal: null,
+        dog_park: null,
+        crowds: null,
+        apartment: null,
+        fence: null,
+        leash_walking: null,
+    }
+
+    handleChange = (key) => (event) => {
+        this.setState({
+                ...this.state,
+                [key]: event.target.value,
+        })        
+    }
+    addNewAttribute = (event) => {
+        event.preventDefault();
+        this.props.dispatch({ type: 'ADD_ATTRIBUTE', payload: this.state })
+        this.setState({
             female: null,
             male: null,
             xsmall: null,
@@ -33,55 +71,8 @@ class AddAttributeForm extends Component {
             apartment: null,
             fence: null,
             leash_walking: null,
-        }
-    }
-  
-    addAttributes = () => {
-        this.props.dispatch({ type: 'ADD_ATTRIBUTES', payload: this.state});
-    }//dispatch post request
-
-    handleChange = (key) => (event) => {
-        this.setState({
-                ...this.state.newAnimal,
-                [key]: event.target.value,
-        })
-        console.log(this.state.newAnimal);
-        
-    }
-    addNewAnimal = event => {
-        event.preventDefault();
-        this.props.dispatch({ type: 'ADD_ATTRIBUTE', payload: this.state.newAnimal })
-        this.setState({
-            newAnimal: {
-                female: null,
-                male: null,
-                xsmall: null,
-                small: null,
-                medium: null,
-                large: null,
-                xlarge: null,
-                shedding: null,
-                not_shedding: null,
-                activity_xlow: null,
-                activity_low: null,
-                activity_medium: null,
-                activity_high: null,
-                activity_xhigh: null,
-                train_basic: null,
-                train_easy: null,
-                train_hard: null,
-                dogs: null,
-                cats: null,
-                kids: null,
-                other_animals: null,
-                single_animal: null,
-                dog_park: null,
-                crowds: null,
-                apartment: null,
-                fence: null,
-                leash_walking: null,
-            }
         });
+        console.log(this.state.newAnimal);
     }
   
     
@@ -338,7 +329,7 @@ class AddAttributeForm extends Component {
                     </label>
                 </li>
             </ul>
-            <Button type='submit'  value='Add New Dog Attributes'>Add Dog</Button>
+            <Button type='submit'  value='Add New Attribute'>Add Dog</Button>
             </form>
             </div>
       </div>

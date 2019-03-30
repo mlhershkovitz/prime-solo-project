@@ -5,7 +5,7 @@ import TableHead from '@material-ui/core/TableHead';
 import { TableBody, TableRow, TableCell } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { Redirect } from 'react-router';
-
+import { Link } from 'react-router-dom';
 
 //if need help figuring out the specific of this,
 //look at any of the main components of the feedback app
@@ -81,8 +81,9 @@ render() {
         </TableHead>
         <TableBody>
       {this.props.animalList.map((animal) => (
+          
           <TableRow key={animal.id}>
-            <TableCell>{animal.name}</TableCell>
+            <TableCell><Link className="puppy-links" to="/add-attribute">{animal.name}</Link></TableCell>
             <TableCell>{animal.gender}</TableCell>
             <TableCell>{animal.age}</TableCell>
             <TableCell>{animal.size}</TableCell>

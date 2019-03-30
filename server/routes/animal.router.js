@@ -117,7 +117,7 @@ router.post('/add-dog', (req, res) => {
   });
 
   router.post('/attribute', (req, res) => {
-    const queryString = `INSERT INTO "attributes" ("female", "male", "xsmall", "small", "medium", "large", "xlarge", "shedding", "not_shedding", "activity_xlow", "activity_low", "activity_medium", "activity_high", "activity_xhigh", "train_basics", "train_easy", "train_hard", "dogs", "cats", "kids", "other_animals", "single_animal", "dog_park", "crowds", "apartment", "fence", "leash_walking", "dog_id")
+    const queryString = `INSERT INTO "attributes" ("female", "male", "xsmall", "small", "medium", "large", "xlarge", "shedding", "not_shedding", "activity_xlow", "activity_low", "activity_medium", "activity_high", "activity_xhigh", "train_basics", "train_easy", "train_hard", "dogs", "cats", "kids", "other_animals", "single_animal", "dog_park", "crowds", "apartment", "fence", "leash_walking",)
                       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27)`;
     const queryValues = [
         req.body.female, 

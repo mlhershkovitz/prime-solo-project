@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+
 import { withStyles } from '@material-ui/core/styles';
 import { FormHelperText } from '@material-ui/core';
 
@@ -39,18 +36,16 @@ render() {
   const { classes } = this.props;
    
     return (
-      <div>
+      <div className="">
       <h1>All Animals</h1>
-    <div style={{
-      display: 'flex',
-
-    }}>
+    <div className="item-div">
         
         
         {this.props.animalList.map((animal) => (
           <Card className={classes.card} key={animal.id}>
-          <div>
+          <div className="item-info">
           <h6>{animal.name}</h6>
+          <img  src={animal.img_url} alt="dog-image" />
           <ul>
             <li>{animal.gender}</li>
             <li>{animal.age}</li>

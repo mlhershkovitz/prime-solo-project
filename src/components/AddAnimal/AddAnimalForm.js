@@ -52,10 +52,6 @@ class AddAnimalForm extends Component {
     })
   }
 
-  handleClick = () => {
-    this.props.history.push('/add-attribute');
-  }
-  //end handle click function
 
   render() {
      
@@ -144,7 +140,6 @@ class AddAnimalForm extends Component {
                 <Button type='submit'  value='Add New Dog'>Add Dog</Button>
             </ul>
             </form>
-            <Button onClick={this.handleClick}>Next page</Button>
             </div>
       </div>
       </>

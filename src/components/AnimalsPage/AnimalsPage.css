@@ -1,0 +1,84 @@
+.item-div {
+    height: 465px;
+    width: 250px;
+    font-size: 80%;
+    padding: 9px;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    box-shadow: 0 2px 2px #d8d8d8;
+    margin: 6px;
+}
+
+
+.image-div img {
+  height: 270px;
+  width: 270px;
+  object-fit: cover;
+  overflow: hidden;
+  opacity: .65;
+  transition: height .8s, width .8s, opacity .8s;
+}
+
+.image-div img:hover {
+  height: 250px;
+  width: 250px;
+  opacity: .85;
+}
+
+
+.item-info {
+    padding: 5px;
+    height: 168px;  
+    justify-content: center;
+    text-align: center;
+}
+
+.item-button-div {
+    border-top: .2px solid #bbbbbb;
+    text-align: center;
+}
+
+.item-button-div {
+    border-top: .2px solid #bbbbbb;
+    text-align: center;
+}
+
+.item-button-div button {
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    color: #696969;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 10px;
+    margin-top: 5px;
+    transition: color .4s;
+    outline: none;
+}
+
+.item-button-div button:hover {
+    color: #cf2121;
+    cursor: pointer;
+}
+
+h2,
+.item-description {
+    margin: 8px 0;
+    
+}
+
+
+h2 {
+    font-family: 'Righteous', cursive;
+    color: #d14242;
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+.ion-ios-cart {
+    font-size: 1.6em;
+    color: #696969;
+}

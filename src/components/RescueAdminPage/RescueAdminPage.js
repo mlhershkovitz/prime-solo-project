@@ -4,7 +4,6 @@ import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import { TableBody, TableRow, TableCell } from '@material-ui/core';
 import { Button } from '@material-ui/core';
-import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
 //if need help figuring out the specific of this,

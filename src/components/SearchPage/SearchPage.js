@@ -308,9 +308,10 @@ class SearchPage extends Component {
                         {this.props.animalList.map((animal) => (
                             <Card className={classes.card}>
                                 <div>
-                                    <h6>{animal.name}</h6>
-                                    
                                     <a href="#/all-animals/">{animal.name} </a>
+                                    <br />
+                                    <img src={animal.img_url} />
+                                    
                                     
                                 </div>
                             </Card>

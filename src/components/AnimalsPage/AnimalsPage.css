@@ -83,6 +83,7 @@ h2 {
     color: #696969;
 }
 
-Card {
-    display: inline-block;
+.dog-cards {
+    flex-wrap: wrap;
 }
+

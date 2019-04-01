@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
-
+import './AddAnimalForm.css';
 
 class AddAnimalForm extends Component {
   state = {
@@ -80,69 +80,80 @@ class AddAnimalForm extends Component {
           
             <form onSubmit={this.addNewDog}>
             <ul>
-                <li>
+                <li className="filter-add">
                     Name: <input placeholder="Name"
                     value={this.state.name}
                     onChange = {this.handleChange('name')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Gender: <input placeholder="gender"
                     value={this.state.gender}
                     onChange = {this.handleChange('gender')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     About how old: <input placeholder="age"
                     value={this.state.age}
                     onChange = {this.handleChange('age')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     How many pounds: <input placeholder="size"
                     value={this.state.size}
                     onChange = {this.handleChange('size')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Breed (or best guess): <input placeholder="Breed"
                     value={this.state.breed}
                     onChange = {this.handleChange('breed')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Coat: <input placeholder="Coat"
                     value={this.state.coat}
                     onChange = {this.handleChange('coat')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     House Trained: <input placeholder="House trained"
                     value={this.state.house_trained}
                     onChange = {this.handleChange('house_trained')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Fixed: <input placeholder="Fixed"
                     value={this.state.fixed}
                     onChange = {this.handleChange('fixed')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Health Needs: <input placeholder="Health Needs"
                     value={this.state.health_needs}
                     onChange = {this.handleChange('health_needs')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Short description: <input placeholder="Comments"
                     value={this.state.comments}
                     onChange = {this.handleChange('comments')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Upload adorable image: <input placeholder="Image URL"
                     value = {this.state.img_url}
                     type = 'link'
                     onChange = {this.handleChange('img_url')}/>
                 </li>
-                <li>
+                
+                <li className="filter-add">
                     Biography: <input placeholder="Biography"
                     value={this.state.dog_bio}
                     onChange = {this.handleChange('dog_bio')}/>
                 </li>
-
-                <Button type='submit'  value='Add New Dog'>Add Dog</Button>
+                <br />
+                <button type='submit'  value='Add New Dog'>Add Dog</button>
             </ul>
             </form>
             </div>

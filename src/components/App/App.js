@@ -115,7 +115,7 @@ class App extends Component {
           </Switch>
           </Grid>
           </Grid>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
   )}

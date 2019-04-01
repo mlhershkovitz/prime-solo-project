@@ -101,13 +101,15 @@ render() {
   const { classes } = this.props;
    
     return (
+      <>
       <div className="">
       <h1>All Animals</h1>
       
       <div className="item-div">
-        
+      <Grid item xs={12} sm={4}>
         {this.props.animalList.map((animal) => (
-      <Grid key={animal.id} item xs={12} sm={4}>
+            <div key={animal.id} className="dog-cards">
+
           <Card className={classes.card} >
               <CardHeader
                     action={
@@ -206,10 +208,12 @@ render() {
           {/* </ul>
         </div> */}
         </Card>
-      </Grid>
+        </div>
       ))}
+      </Grid>
       </div>
     </div>
+    </>
     );
   }
 }

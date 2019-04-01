@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
-
+import "../App/App.css"
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
@@ -31,11 +31,11 @@ class UserPage extends Component {
       Welcome, Rescue Admin: { this.props.user.username }!
       </h1>
       <h3>What would you like to do today?</h3>
-      <Button onClick={this.handleClickAnimals}>View All Animals</Button>
+      <Button className="link-button" onClick={this.handleClickAnimals}>View All Animals</Button>
       <br />
-      <Button onClick={this.handleClickTable}>Edit Animals</Button>
+      <Button  className="link-button" onClick={this.handleClickTable}>Edit Animals</Button>
       <br />
-      <Button onClick={this.handleClickAdd}>Add New Animal</Button>
+      <Button  className="link-button" onClick={this.handleClickAdd}>Add New Animal</Button>
     </div>
     )
   }

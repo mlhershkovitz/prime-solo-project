@@ -108,9 +108,9 @@ render() {
       <div className="item-div">
       <Grid item xs={12} sm={4}>
         {this.props.animalList.map((animal) => (
-            <div key={animal.id} className="dog-cards">
+            <div  className="dog-cards">
 
-          <Card className={classes.card} >
+          <Card key={animal.id} className={classes.card} >
               <CardHeader
                     action={
                       <IconButton>

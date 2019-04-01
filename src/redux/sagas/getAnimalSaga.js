@@ -28,7 +28,7 @@ function* filterAnimal(action){
   function* deleteMe(action){
     try{
         yield axios.delete( `api/animal/${action.payload}`)
-        yield put({type: 'ADD_ANIMAL'})
+        yield put({type: 'FETCH_ANIMAL'})
     } catch(error){
         console.log('DELETE ', error)
     }

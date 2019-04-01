@@ -245,39 +245,40 @@ class SearchPage extends Component {
                     <div className="filter">
                         <span className="filterHeadings">What gender would you prefer?</span>
                         <br />
-                        Female: <input type="checkbox" onClick={this.handleChangeFor('female')} className="gender-female"></input>
-                        Male: <input type="checkbox" onClick={this.handleChangeFor('male')} className="gender-male"></input>
+                        Female: <input type="checkbox" onClick={this.handleChangeFor('female')} className="box"></input>
+                        Male: <input type="checkbox" onClick={this.handleChangeFor('male')} className="box"></input>
                     </div>
                     <div className="filter">
                         <span className="filterHeadings">What size will fit best in your home? </span>
                         <br />
-                        Pocket Pet (-8 lbs): <input type="checkbox" onClick={this.handleChangeFor('xsmall')} className="size-xsmall"></input>
-                        Small (8-29 lbs): <input type="checkbox" onClick={this.handleChangeFor('small')} className="size-small"></input>
-                        Medium (30-55 lbs): <input type="checkbox" onClick={this.handleChangeFor('medium')} className="size-medium"></input>
-                        Large (56-89 lbs): <input type="checkbox" onClick={this.handleChangeFor('large')} className="size-large"></input>
-                        X-Large Lap Dogs (90+ lbs): <input type="checkbox" onClick={this.handleChangeFor('xlarge')} className="size-xlarge"></input>
+                        Pocket Pet (-8 lbs): <input type="checkbox" onClick={this.handleChangeFor('xsmall')} className="box"></input>
+                        Small (8-29 lbs): <input type="checkbox" onClick={this.handleChangeFor('small')} className="box"></input>
+                        Medium (30-55 lbs): <input type="checkbox" onClick={this.handleChangeFor('medium')} className="box"></input>
+                        <br />
+                        Large (56-89 lbs): <input type="checkbox" onClick={this.handleChangeFor('large')} className="box"></input>
+                        X-Large Lap Dogs (90+ lbs): <input type="checkbox" onClick={this.handleChangeFor('xlarge')} className="box"></input>
                     </div>
                     <div className="filter">
                         <span className="filterHeadings">Are you okay with a shedding animal?</span>
                         <br />
-                        Yes: <input type="checkbox" onClick={this.handleChangeFor('shedding')} className="shedding-yes"></input>
-                        No: <input type="checkbox" onClick={this.handleChangeFor('not_shedding')} className="shedding-no"></input>
+                        Yes: <input type="checkbox" onClick={this.handleChangeFor('shedding')} className="box"></input>
+                        No: <input type="checkbox" onClick={this.handleChangeFor('not_shedding')} className="box"></input>
                     </div>
                     <div className="filter">
                         <span className="filterHeadings">How much activity can you handle?</span>
                         <br />
-                        Couch Potato: <input type="checkbox" onClick={this.handleChangeFor('activity_xlow')} className="activity-xlow"></input>
-                        Low activity: <input type="checkbox" onClick={this.handleChangeFor('activity_low')} className="activity-low"></input>
-                        Medium activity: <input type="checkbox" onClick={this.handleChangeFor('activity_medium')} className="activity-medium"></input>
-                        High activity: <input type="checkbox" onClick={this.handleChangeFor('activity_high')} className="activity-high"></input>
-                        Athlete: <input type="checkbox" onClick={this.handleChangeFor('activity_xhigh')} className="activity-xhigh"></input>
+                        Couch Potato: <input type="checkbox" onClick={this.handleChangeFor('activity_xlow')} className="box"></input>
+                        Low activity: <input type="checkbox" onClick={this.handleChangeFor('activity_low')} className="box"></input>
+                        Medium activity: <input type="checkbox" onClick={this.handleChangeFor('activity_medium')} className="box"></input>
+                        High activity: <input type="checkbox" onClick={this.handleChangeFor('activity_high')} className="box"></input>
+                        Athlete: <input type="checkbox" onClick={this.handleChangeFor('activity_xhigh')} className="box"></input>
                     </div>
                     <div className="filter">
                         <span className="filterHeadings">How trainable/trained would you like the animal to be?</span>
                         <br />
-                        Already trained in the basics: <input type="checkbox" onClick={this.handleChangeFor('train_basic')} className="training-basic"></input>
-                        Easily (or very food motivated): <input type="checkbox" onClick={this.handleChangeFor('train_easy')} className="training-easy"></input>
-                        Stubborn: <input type="checkbox" onClick={this.handleChangeFor('train_hard')} className="training-stubborn"></input>
+                        Already trained in the basics: <input type="checkbox" onClick={this.handleChangeFor('train_basic')} className="box"></input>
+                        Easily (or very food motivated): <input type="checkbox" onClick={this.handleChangeFor('train_easy')} className="box"></input>
+                        Stubborn: <input type="checkbox" onClick={this.handleChangeFor('train_hard')} className="box"></input>
                     </div>
                     {/* <div className="snuggle">
             Next Level Snuggler: <input type="checkbox" className="snuggle-aloof"></input>
@@ -285,20 +286,21 @@ class SearchPage extends Component {
                     <div className="filter">
                         <span className="filterHeadings">Do you have other creatures in your household?</span>
                         <br />
-                        Other dogs: <input type="checkbox" onClick={this.handleChangeFor('dogs')} className="creatures-dogs"></input>
-                        Cats: <input type="checkbox" onClick={this.handleChangeFor('cats')} className="creatures-cats"></input>
-                        Kids: <input type="checkbox" onClick={this.handleChangeFor('kids')} className="creatures-kids"></input>
-                        Other: <input type="checkbox" onClick={this.handleChangeFor('other_animals')} className="creatures-other"></input>
-                        Single Pet Household: <input type="checkbox" onClick={this.handleChangeFor('single_animal')} className="creatures-none"></input>
+                        Other dogs: <input type="checkbox" onClick={this.handleChangeFor('dogs')} className="box"></input>
+                        Cats: <input type="checkbox" onClick={this.handleChangeFor('cats')} className="box"></input>
+                        Kids: <input type="checkbox" onClick={this.handleChangeFor('kids')} className="box"></input>
+                        Other: <input type="checkbox" onClick={this.handleChangeFor('other_animals')} className="box"></input>
+                        Single Pet Household: <input type="checkbox" onClick={this.handleChangeFor('single_animal')} className="box"></input>
                     </div>
                     <div className="filter">
                         <span className="filterHeadings">What kinds of activities would you like to do with your new pet?</span>
                         <br />
-                        Dog Park: <input type="checkbox" onClick={this.handleChangeFor('dog_park')} className="social-dogpark"></input>
-                        Be around multiple strangers at once: <input type="checkbox" onClick={this.handleChangeFor('crowds')} className="social-people"></input>
-                        Apartment Living: <input type="checkbox" onClick={this.handleChangeFor('apartment')} className="social-apartment"></input>
-                        Physical fence in yard: <input type="checkbox" onClick={this.handleChangeFor('fence')} className="social-physical-fence"></input>
-                        Calm on a leash: <input type="checkbox" onClick={this.handleChangeFor('leash_walking')} className="social-leash-walking"></input>
+                        Dog Park: <input type="checkbox" onClick={this.handleChangeFor('dog_park')} className="box"></input>
+                        Be around multiple strangers at once: <input type="checkbox" onClick={this.handleChangeFor('crowds')} className="box"></input>
+                        Apartment Living: <input type="checkbox" onClick={this.handleChangeFor('apartment')} className="box"></input>
+                        <br />
+                        Physical fence in yard: <input type="checkbox" onClick={this.handleChangeFor('fence')} className="box"></input>
+                        Calm on a leash: <input type="checkbox" onClick={this.handleChangeFor('leash_walking')} className="box"></input>
                     </div>
 
                     <button className="searchButton" onClick={this.handleClick}>Search 🐶</button>

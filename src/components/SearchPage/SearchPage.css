@@ -1,6 +1,6 @@
 .filterHeadings{
     font-size: 20px;
-   
+    font-weight: bold;
 }
 
 .searchButton{
@@ -23,4 +23,9 @@
 .filter{
     margin-bottom: 20px;
     text-align: center;
+}
+
+
+.box{
+    margin-right: 20px;
 }

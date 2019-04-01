@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 
 import { withStyles } from '@material-ui/core/styles';
 import { FormHelperText } from '@material-ui/core';
+
 
 //if need help figuring out the specific of this,
 //look at any of the main components of the feedback app

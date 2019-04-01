@@ -52,6 +52,23 @@ class AddAnimalForm extends Component {
     })
   }
 
+  fillIn = () => {
+        this.setState({
+            name: 'Poindexter',
+            gender: 'Male',
+            age: '6.5',
+            size: '10 lbs',
+            breed: 'Japanese Chin',
+            coat: 'Long black and white hair',
+            house_trained: 'House-trained',
+            fixed: 'Neutered',
+            health_needs: 'Has all shots',
+            comments: 'All he wants is to be held, pet, and sit in a lap forever. Perfect little cuddle dog.',
+            img_url: 'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/43989388/3/?bust=1553323006&width=720',
+            dog_bio: '',
+    })
+  }
+
 
   render() {
      
@@ -64,75 +81,63 @@ class AddAnimalForm extends Component {
             <form onSubmit={this.addNewDog}>
             <ul>
                 <li>
-                    Name:
-                    <input placeholder="Name"
+                    Name: <input placeholder="Name"
                     value={this.state.name}
                     onChange = {this.handleChange('name')}/>
                 </li>
                 <li>
-                    Gender:
-                    <input placeholder="gender"
+                    Gender: <input placeholder="gender"
                     value={this.state.gender}
                     onChange = {this.handleChange('gender')}/>
                 </li>
                 <li>
-                    About how old:
-                    <input placeholder="age"
+                    About how old: <input placeholder="age"
                     value={this.state.age}
                     onChange = {this.handleChange('age')}/>
                 </li>
                 <li>
-                    How many pounds:
-                    <input placeholder="size"
+                    How many pounds: <input placeholder="size"
                     value={this.state.size}
                     onChange = {this.handleChange('size')}/>
                 </li>
                 <li>
-                    Breed (or best guess):
-                    <input placeholder="Breed"
+                    Breed (or best guess): <input placeholder="Breed"
                     value={this.state.breed}
                     onChange = {this.handleChange('breed')}/>
                 </li>
                 <li>
-                    Coat:
-                    <input placeholder="Coat"
+                    Coat: <input placeholder="Coat"
                     value={this.state.coat}
                     onChange = {this.handleChange('coat')}/>
                 </li>
                 <li>
-                    House Trained:
-                    <input placeholder="House trained"
+                    House Trained: <input placeholder="House trained"
                     value={this.state.house_trained}
                     onChange = {this.handleChange('house_trained')}/>
                 </li>
                 <li>
-                    Fixed:
-                    <input placeholder="Fixed"
+                    Fixed: <input placeholder="Fixed"
                     value={this.state.fixed}
                     onChange = {this.handleChange('fixed')}/>
                 </li>
                 <li>
-                    Health Needs:
-                    <input placeholder="Health Needs"
+                    Health Needs: <input placeholder="Health Needs"
                     value={this.state.health_needs}
                     onChange = {this.handleChange('health_needs')}/>
                 </li>
                 <li>
-                    Comments:
-                    <input placeholder="Comments"
+                    Short description: <input placeholder="Comments"
                     value={this.state.comments}
                     onChange = {this.handleChange('comments')}/>
                 </li>
                 <li>
-                    Upload adorable image:
-                    <input placeholder="Image URL"
+                    Upload adorable image: <input placeholder="Image URL"
                     value = {this.state.img_url}
                     type = 'link'
                     onChange = {this.handleChange('img_url')}/>
                 </li>
                 <li>
-                    Biography:
-                    <input placeholder="Biography"
+                    Biography: <input placeholder="Biography"
                     value={this.state.dog_bio}
                     onChange = {this.handleChange('dog_bio')}/>
                 </li>
@@ -142,6 +147,7 @@ class AddAnimalForm extends Component {
             </form>
             </div>
       </div>
+      <button onClick={this.fillIn}></button>
       </>
       );
     }

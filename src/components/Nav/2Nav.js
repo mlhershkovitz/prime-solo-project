@@ -23,7 +23,7 @@ const Nav = (props) => (
       {/* <Link className="nav-link" to="/login">
         Login
       </Link> */}
-      
+
       <Link className="nav-link" to="/home">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
@@ -36,10 +36,10 @@ const Nav = (props) => (
           <Link className="nav-link" to="/rescue-admin">
             Rescue Admin
           </Link>
-          <LogOutButton className="nav-link"/>
+          <LogOutButton className="nav-link" />
         </>
       )}
-      
+
     </div>
   </div>
 );

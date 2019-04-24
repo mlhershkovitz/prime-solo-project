@@ -15,45 +15,45 @@ class BioPage extends Component {
 
   //component did mount to make sure the page loads correctly
   componentDidMount() {
-     this.getAnimals();    
+    this.getAnimals();
   };// end component did mount
 
   //will for sure need get request in here
   getAnimals() {
     this.props.dispatch({ type: 'FETCH_ANIMAL' });
   };//end get dispatch to saga
-  
+
   //display the animals on cards
 
-  
-render() { 
-  console.log(this.props.animalList);
-  const { classes } = this.props;
-   
+
+  render() {
+    console.log(this.props.animalList);
+    const { classes } = this.props;
+
     return (
       <div>
-      <h1>Hello there, my name is {this.props.animalList.name}!</h1>
+        <h1>Hello there, my name is {this.props.animalList.name}!</h1>
 
-      {this.props.animalList.map((dog) => (
-        <div>
-          <h5>{animal.name}</h5>
-          <ul>
-            <h6>Quick Facts</h6>
-            <li>{animal.gender}</li>
-            <li>{animal.age}</li>
-            <li>{animal.size}</li>
-            <li>{animal.breed}</li>
-            <li>{animal.coat}</li>
-            <li>{animal.house_trained}</li>
-            <li>{animal.fixed}</li>
-            <li>{animal.health_needs}</li>
-            <li>{animal.comments}</li>
-            {/* <li>{animal.img_url}</li>
+        {this.props.animalList.map((dog) => (
+          <div>
+            <h5>{animal.name}</h5>
+            <ul>
+              <h6>Quick Facts</h6>
+              <li>{animal.gender}</li>
+              <li>{animal.age}</li>
+              <li>{animal.size}</li>
+              <li>{animal.breed}</li>
+              <li>{animal.coat}</li>
+              <li>{animal.house_trained}</li>
+              <li>{animal.fixed}</li>
+              <li>{animal.health_needs}</li>
+              <li>{animal.comments}</li>
+              {/* <li>{animal.img_url}</li>
             <li>{animal.dog_bio}</li> */}
-          </ul>
+            </ul>
           </div>
         ))}
-    </div>
+      </div>
     );
   }
 }
